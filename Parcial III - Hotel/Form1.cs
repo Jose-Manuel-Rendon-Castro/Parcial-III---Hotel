@@ -1,0 +1,10 @@
+namespace Parcial_III___Hotel
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+    }
+}
