@@ -182,7 +182,7 @@
             Controls.Add(panelLogin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMenuNavegacion";
-            Text = "FrmMenuNavegacion";
+            Text = "Menú de navegación";
             WindowState = FormWindowState.Maximized;
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();

@@ -195,7 +195,6 @@
         private Panel panelLogin;
         public PictureBox pctBoxLogin;
         public Label lblLogin_Bienvenido;
-        private Panel panelLogin_Credenciales;
         public TextBox txtBLogin_Contraseña;
         public TextBox txtBLogin_Usuario;
         public Label lblLogin_Contraseña;
@@ -204,5 +203,6 @@
         private Label lblLogin_NombreHotel;
         public Button btnLogin_IniciarSesion;
         public Button btnLogin_Salir;
+        public Panel panelLogin_Credenciales;
     }
 }

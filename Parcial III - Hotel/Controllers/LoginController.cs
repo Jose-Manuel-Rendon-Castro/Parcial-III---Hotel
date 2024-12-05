@@ -14,6 +14,7 @@ namespace Parcial_III___Hotel.Controllers
             _frmLogin = frmLogin;
             _frmLogin.btnLogin_Salir.Click += btnLogin_Salir_Click;
             _frmLogin.btnLogin_IniciarSesion.Click += btnLogin_IniciarSesion_Click;
+            _frmLogin.Deactivate += Deactivate;
         }
         
         private void btnLogin_IniciarSesion_Click(object? sender, EventArgs e)
@@ -48,6 +49,12 @@ namespace Parcial_III___Hotel.Controllers
             {
                 MessageBox.Show(ex.Message, "Datos incorrectos");
             }
+        }
+
+        private void Deactivate(object? sender, EventArgs e)
+        {
+            _frmLogin.txtBLogin_Usuario.Text = "";
+            _frmLogin.txtBLogin_Contraseña.Text = "";
         }
         private void btnLogin_Salir_Click(object? sender, EventArgs e)
         {
