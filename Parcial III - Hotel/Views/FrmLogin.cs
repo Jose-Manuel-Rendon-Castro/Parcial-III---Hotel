@@ -5,11 +5,11 @@ namespace Parcial_III___Hotel
 {
     public partial class FrmLogin : Form
     {
-        private FrmLoginController _loginController;
+        private LoginController _loginController;
         public FrmLogin()
         {
             InitializeComponent();
-            _loginController = new FrmLoginController(this);
+            _loginController = new LoginController(this);
         }
     }
 }

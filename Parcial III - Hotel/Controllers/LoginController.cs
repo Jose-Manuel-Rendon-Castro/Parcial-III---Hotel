@@ -5,11 +5,11 @@ using Parcial_III___Hotel.Views;
 
 namespace Parcial_III___Hotel.Controllers
 {
-    public class FrmLoginController
+    public class LoginController
     {
         private FrmLogin _frmLogin;
 
-        public FrmLoginController(FrmLogin frmLogin)
+        public LoginController(FrmLogin frmLogin)
         {
             _frmLogin = frmLogin;
             _frmLogin.btnLogin_Salir.Click += btnLogin_Salir_Click;
