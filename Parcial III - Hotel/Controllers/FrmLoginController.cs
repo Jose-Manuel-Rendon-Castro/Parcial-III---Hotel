@@ -20,7 +20,7 @@ namespace Parcial_III___Hotel.Controllers
         {
             try
             {
-                if (!String.IsNullOrEmpty(_frmLogin.txtBLogin_Usuario.Text) || !String.IsNullOrEmpty(_frmLogin.txtBLogin_Contraseña.Text))
+                if (String.IsNullOrEmpty(_frmLogin.txtBLogin_Usuario.Text) || String.IsNullOrEmpty(_frmLogin.txtBLogin_Contraseña.Text))
                 {
                     throw new EmptyFieldException();
                 }
@@ -31,7 +31,17 @@ namespace Parcial_III___Hotel.Controllers
                 );
                 if ( userOnUse != null )
                 {
-                    FrmMenuNavegacion frmMenuNavegacion = new FrmMenuNavegacion();
+                    FrmMenuNavegacion frmMenuNavegacion = new FrmMenuNavegacion(userOnUse);
+                    MessageBox.Show("Sesion Iniciada");
+                    _frmLogin.Hide();
+
+                    frmMenuNavegacion.FormClosed += (s, args) => _frmLogin.Show();
+                    frmMenuNavegacion.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Credenciales no coinciden o son inexistentes");
+                    return;
                 }
             }
             catch (EmptyFieldException ex)

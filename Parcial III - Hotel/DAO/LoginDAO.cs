@@ -56,7 +56,7 @@ namespace Parcial_III___Hotel.DAO
                                 id = reader.GetInt32("id"),
                                 nombreUsuario = reader.GetString("nombre_usuario"),
                                 contraseña = reader.GetString("contraseña"),
-                                tipoUsuario = reader.GetString("tipoUsuario")
+                                tipoUsuario = reader.GetString("tipo_usuario")
                             };
                             return usuario;
                         }

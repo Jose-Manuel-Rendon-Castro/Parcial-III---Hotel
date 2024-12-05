@@ -69,5 +69,27 @@ namespace Parcial_III___Hotel.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gratis_png_hotel_aeropuerto_check_in_iconos_de_computadora_gente_de_la_ciudad_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("gratis-png-hotel-aeropuerto-check-in-iconos-de-computadora-gente-de-la-ciudad-thu" +
+                        "mbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gratis_png_hotel_aeropuerto_check_in_iconos_de_computadora_gente_de_la_ciudad_thumbnail1 {
+            get {
+                object obj = ResourceManager.GetObject("gratis-png-hotel-aeropuerto-check-in-iconos-de-computadora-gente-de-la-ciudad-thu" +
+                        "mbnail1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
