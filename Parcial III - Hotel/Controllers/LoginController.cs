@@ -36,6 +36,7 @@ namespace Parcial_III___Hotel.Controllers
                     MessageBox.Show("Sesion Iniciada");
                     _frmLogin.Hide();
 
+                    frmMenuNavegacion.lblMenu_Bienvenido.Text = $"Bienvenido {userOnUse.nombreUsuario}";
                     frmMenuNavegacion.FormClosed += (s, args) => _frmLogin.Show();
                     frmMenuNavegacion.ShowDialog();
                 }

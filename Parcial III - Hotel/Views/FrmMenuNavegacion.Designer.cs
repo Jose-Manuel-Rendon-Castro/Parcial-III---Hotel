@@ -31,6 +31,7 @@
             panelLogin = new Panel();
             lblLogin_NombreHotel = new Label();
             panelMenu_Opciones = new Panel();
+            lblMenu_Bienvenido = new Label();
             btnMenu_Inicio = new Button();
             btnMenu_Reservacion = new Button();
             panelMenu_SidePanel = new Panel();
@@ -66,6 +67,7 @@
             // panelMenu_Opciones
             // 
             panelMenu_Opciones.BackColor = Color.RoyalBlue;
+            panelMenu_Opciones.Controls.Add(lblMenu_Bienvenido);
             panelMenu_Opciones.Controls.Add(btnMenu_Inicio);
             panelMenu_Opciones.Controls.Add(btnMenu_Reservacion);
             panelMenu_Opciones.Controls.Add(panelMenu_SidePanel);
@@ -75,6 +77,16 @@
             panelMenu_Opciones.Name = "panelMenu_Opciones";
             panelMenu_Opciones.Size = new Size(343, 917);
             panelMenu_Opciones.TabIndex = 3;
+            // 
+            // lblMenu_Bienvenido
+            // 
+            lblMenu_Bienvenido.AutoSize = true;
+            lblMenu_Bienvenido.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMenu_Bienvenido.Location = new Point(13, 41);
+            lblMenu_Bienvenido.Name = "lblMenu_Bienvenido";
+            lblMenu_Bienvenido.Size = new Size(65, 28);
+            lblMenu_Bienvenido.TabIndex = 8;
+            lblMenu_Bienvenido.Text = "label1";
             // 
             // btnMenu_Inicio
             // 
@@ -133,7 +145,7 @@
             btnMenu_Salir.Name = "btnMenu_Salir";
             btnMenu_Salir.Size = new Size(343, 88);
             btnMenu_Salir.TabIndex = 5;
-            btnMenu_Salir.Text = "SALIR";
+            btnMenu_Salir.Text = "CERRAR SESIÓN";
             btnMenu_Salir.UseVisualStyleBackColor = false;
             // 
             // lblMenu_Copyright
@@ -187,6 +199,7 @@
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();
             panelMenu_Opciones.ResumeLayout(false);
+            panelMenu_Opciones.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -208,5 +221,6 @@
         public Button btnMenu_Inicio;
         public UserControls.InicioUC InicioUC;
         private UserControls.ReservacionUC reservacionuc1;
+        public Label lblMenu_Bienvenido;
     }
 }
