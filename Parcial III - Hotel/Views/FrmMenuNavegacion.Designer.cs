@@ -31,16 +31,18 @@
             panelLogin = new Panel();
             lblLogin_NombreHotel = new Label();
             panelMenu_Opciones = new Panel();
+            btnMenu_CheckIn = new Button();
             lblMenu_Bienvenido = new Label();
             btnMenu_Inicio = new Button();
             btnMenu_Reservacion = new Button();
             panelMenu_SidePanel = new Panel();
-            btnMenu_CheckIn = new Button();
+            btnMenu_Reservar = new Button();
             btnMenu_Salir = new Button();
             lblMenu_Copyright = new Label();
-            CheckInUC = new UserControls.CheckInUC();
+            ReservarUC = new UserControls.ReservarUC();
             ReservacionUC = new UserControls.ReservacionUC();
             InicioUC = new UserControls.InicioUC();
+            panelMenu_CheckInUC = new UserControls.CheckInUC();
             panelLogin.SuspendLayout();
             panelMenu_Opciones.SuspendLayout();
             SuspendLayout();
@@ -67,16 +69,30 @@
             // panelMenu_Opciones
             // 
             panelMenu_Opciones.BackColor = Color.RoyalBlue;
+            panelMenu_Opciones.Controls.Add(btnMenu_CheckIn);
             panelMenu_Opciones.Controls.Add(lblMenu_Bienvenido);
             panelMenu_Opciones.Controls.Add(btnMenu_Inicio);
             panelMenu_Opciones.Controls.Add(btnMenu_Reservacion);
             panelMenu_Opciones.Controls.Add(panelMenu_SidePanel);
-            panelMenu_Opciones.Controls.Add(btnMenu_CheckIn);
+            panelMenu_Opciones.Controls.Add(btnMenu_Reservar);
             panelMenu_Opciones.Controls.Add(btnMenu_Salir);
             panelMenu_Opciones.Location = new Point(0, 163);
             panelMenu_Opciones.Name = "panelMenu_Opciones";
             panelMenu_Opciones.Size = new Size(343, 917);
             panelMenu_Opciones.TabIndex = 3;
+            // 
+            // btnMenu_CheckIn
+            // 
+            btnMenu_CheckIn.FlatAppearance.BorderSize = 0;
+            btnMenu_CheckIn.FlatStyle = FlatStyle.Flat;
+            btnMenu_CheckIn.Font = new Font("Microsoft YaHei UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMenu_CheckIn.Location = new Point(13, 341);
+            btnMenu_CheckIn.Name = "btnMenu_CheckIn";
+            btnMenu_CheckIn.Size = new Size(331, 86);
+            btnMenu_CheckIn.TabIndex = 9;
+            btnMenu_CheckIn.Text = "Check-In";
+            btnMenu_CheckIn.TextAlign = ContentAlignment.MiddleLeft;
+            btnMenu_CheckIn.UseVisualStyleBackColor = true;
             // 
             // lblMenu_Bienvenido
             // 
@@ -106,7 +122,7 @@
             btnMenu_Reservacion.FlatAppearance.BorderSize = 0;
             btnMenu_Reservacion.FlatStyle = FlatStyle.Flat;
             btnMenu_Reservacion.Font = new Font("Microsoft YaHei UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnMenu_Reservacion.Location = new Point(12, 354);
+            btnMenu_Reservacion.Location = new Point(9, 573);
             btnMenu_Reservacion.Name = "btnMenu_Reservacion";
             btnMenu_Reservacion.Size = new Size(331, 86);
             btnMenu_Reservacion.TabIndex = 6;
@@ -122,18 +138,18 @@
             panelMenu_SidePanel.Size = new Size(14, 86);
             panelMenu_SidePanel.TabIndex = 5;
             // 
-            // btnMenu_CheckIn
+            // btnMenu_Reservar
             // 
-            btnMenu_CheckIn.FlatAppearance.BorderSize = 0;
-            btnMenu_CheckIn.FlatStyle = FlatStyle.Flat;
-            btnMenu_CheckIn.Font = new Font("Microsoft YaHei UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnMenu_CheckIn.Location = new Point(12, 249);
-            btnMenu_CheckIn.Name = "btnMenu_CheckIn";
-            btnMenu_CheckIn.Size = new Size(331, 86);
-            btnMenu_CheckIn.TabIndex = 5;
-            btnMenu_CheckIn.Text = "Check-In";
-            btnMenu_CheckIn.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenu_CheckIn.UseVisualStyleBackColor = true;
+            btnMenu_Reservar.FlatAppearance.BorderSize = 0;
+            btnMenu_Reservar.FlatStyle = FlatStyle.Flat;
+            btnMenu_Reservar.Font = new Font("Microsoft YaHei UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMenu_Reservar.Location = new Point(12, 249);
+            btnMenu_Reservar.Name = "btnMenu_Reservar";
+            btnMenu_Reservar.Size = new Size(331, 86);
+            btnMenu_Reservar.TabIndex = 5;
+            btnMenu_Reservar.Text = "Reservar";
+            btnMenu_Reservar.TextAlign = ContentAlignment.MiddleLeft;
+            btnMenu_Reservar.UseVisualStyleBackColor = true;
             // 
             // btnMenu_Salir
             // 
@@ -158,13 +174,13 @@
             lblMenu_Copyright.TabIndex = 4;
             lblMenu_Copyright.Text = "TM © 2024 - Hotel Suite Savage - All Rights Reserved";
             // 
-            // CheckInUC
+            // ReservarUC
             // 
-            CheckInUC.BackColor = SystemColors.ActiveCaption;
-            CheckInUC.Location = new Point(408, 224);
-            CheckInUC.Name = "CheckInUC";
-            CheckInUC.Size = new Size(1448, 804);
-            CheckInUC.TabIndex = 5;
+            ReservarUC.BackColor = SystemColors.ActiveCaption;
+            ReservarUC.Location = new Point(408, 224);
+            ReservarUC.Name = "ReservarUC";
+            ReservarUC.Size = new Size(1448, 804);
+            ReservarUC.TabIndex = 5;
             // 
             // ReservacionUC
             // 
@@ -181,14 +197,22 @@
             InicioUC.Size = new Size(1448, 804);
             InicioUC.TabIndex = 7;
             // 
+            // panelMenu_CheckInUC
+            // 
+            panelMenu_CheckInUC.Location = new Point(408, 224);
+            panelMenu_CheckInUC.Name = "panelMenu_CheckInUC";
+            panelMenu_CheckInUC.Size = new Size(1810, 1005);
+            panelMenu_CheckInUC.TabIndex = 8;
+            // 
             // FrmMenuNavegacion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(panelMenu_CheckInUC);
             Controls.Add(InicioUC);
             Controls.Add(ReservacionUC);
-            Controls.Add(CheckInUC);
+            Controls.Add(ReservarUC);
             Controls.Add(lblMenu_Copyright);
             Controls.Add(panelMenu_Opciones);
             Controls.Add(panelLogin);
@@ -211,16 +235,18 @@
         private Panel panelMenu_Opciones;
         public Button btnMenu_Salir;
         private Label lblMenu_Copyright;
-        public Button btnMenu_CheckIn;
+        public Button btnMenu_Reservar;
         public Button btnMenu_Reservacion;
         private Panel panel1;
-        private UserControls.CheckInUC checkInuc1;
+        private UserControls.ReservarUC checkInuc1;
         public UserControls.ReservacionUC ReservacionUC;
-        public UserControls.CheckInUC CheckInUC;
+        public UserControls.ReservarUC ReservarUC;
         public Panel panelMenu_SidePanel;
         public Button btnMenu_Inicio;
         public UserControls.InicioUC InicioUC;
         private UserControls.ReservacionUC reservacionuc1;
         public Label lblMenu_Bienvenido;
+        public Button btnMenu_CheckIn;
+        public UserControls.CheckInUC panelMenu_CheckInUC;
     }
 }

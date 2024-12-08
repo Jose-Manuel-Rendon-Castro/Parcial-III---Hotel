@@ -1,4 +1,4 @@
-﻿using Parcial_III___Hotel.DAO;
+﻿using Parcial_III___Hotel.DataAccessObject;
 using Parcial_III___Hotel.Exceptions;
 using Parcial_III___Hotel.Models;
 using Parcial_III___Hotel.Views;

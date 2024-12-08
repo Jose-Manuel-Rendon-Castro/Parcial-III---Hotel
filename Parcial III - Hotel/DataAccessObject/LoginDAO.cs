@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Parcial_III___Hotel.Models;
 
-namespace Parcial_III___Hotel.DAO
+namespace Parcial_III___Hotel.DataAccessObject
 {
     public class LoginDAO : ConnectionString
     {

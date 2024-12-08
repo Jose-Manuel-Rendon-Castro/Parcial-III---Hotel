@@ -1,5 +1,5 @@
 using Parcial_III___Hotel.Controllers;
-using Parcial_III___Hotel.DAO;
+using Parcial_III___Hotel.DataAccessObject;
 
 namespace Parcial_III___Hotel
 {
