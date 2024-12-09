@@ -26,5 +26,21 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
                 }
             }
         }
+
+        public static void UpdateCheckStatus(DataGridView dataGridView)
+        {
+            string updateString = "UPDATE Checks SET Estado_Checks = 'ACTIVO' WHERE id = @id";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                using (MySqlCommand updateCommand = new MySqlCommand(updateString, conn))
+                {
+                    int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[1].Value);
+                    updateCommand.Parameters.AddWithValue("@id", id);
+                    updateCommand.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
