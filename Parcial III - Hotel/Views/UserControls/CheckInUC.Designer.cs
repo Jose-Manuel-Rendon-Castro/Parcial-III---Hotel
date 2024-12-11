@@ -83,7 +83,7 @@
             dtgvCheckInUC_Selected.AllowUserToAddRows = false;
             dtgvCheckInUC_Selected.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvCheckInUC_Selected.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dtgvCheckInUC_Selected.EditMode = DataGridViewEditMode.EditOnKeystroke;
+            dtgvCheckInUC_Selected.EditMode = DataGridViewEditMode.EditProgrammatically;
             dtgvCheckInUC_Selected.Location = new Point(41, 504);
             dtgvCheckInUC_Selected.Name = "dtgvCheckInUC_Selected";
             dtgvCheckInUC_Selected.RowHeadersWidth = 51;

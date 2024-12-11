@@ -1,13 +1,17 @@
-﻿using Parcial_III___Hotel.Views;
+﻿using Parcial_III___Hotel.Controllers.ControllersUC;
+using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
+using Parcial_III___Hotel.Views;
 
 namespace Parcial_III___Hotel.Controllers
 {
     public class MenuNavegadorController
     {
         private FrmMenuNavegacion _frmMenuNavegacion;
-        public MenuNavegadorController(FrmMenuNavegacion frmMenuNavegacion)
+        private CheckInController _CheckInController;
+        public MenuNavegadorController(FrmMenuNavegacion frmMenuNavegacion, CheckInController checkInController)
         {
             _frmMenuNavegacion = frmMenuNavegacion;
+            _CheckInController = checkInController;
             _frmMenuNavegacion.panelMenu_SidePanel.Height = _frmMenuNavegacion.btnMenu_Inicio.Height;
             _frmMenuNavegacion.panelMenu_SidePanel.Top = _frmMenuNavegacion.btnMenu_Inicio.Top;
             _frmMenuNavegacion.InicioUC.BringToFront();
@@ -36,6 +40,7 @@ namespace Parcial_III___Hotel.Controllers
             _frmMenuNavegacion.panelMenu_SidePanel.Height = _frmMenuNavegacion.btnMenu_CheckIn.Height;
             _frmMenuNavegacion.panelMenu_SidePanel.Top = _frmMenuNavegacion.btnMenu_CheckIn.Top;
             _frmMenuNavegacion.panelMenu_CheckInUC.BringToFront();
+            _CheckInController.Load(sender, e);
         }
         private void btnMenu_Reservacion(object? sender, EventArgs e)
         {
