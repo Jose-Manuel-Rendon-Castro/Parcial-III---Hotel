@@ -39,7 +39,7 @@
             btnMenu_Reservar = new Button();
             btnMenu_Salir = new Button();
             lblMenu_Copyright = new Label();
-            CheckInUC = new UserControls.CheckInUC();
+            CheckInUC = new UserControls.ReservarUC();
             ReservacionUC = new UserControls.ReservacionUC();
             InicioUC = new UserControls.InicioUC();
             panelMenu_CheckInUC = new UserControls.CheckInUC();
@@ -147,7 +147,7 @@
             btnMenu_CheckIn.Name = "btnMenu_CheckIn";
             btnMenu_CheckIn.Size = new Size(331, 86);
             btnMenu_CheckIn.TabIndex = 5;
-            btnMenu_CheckIn.Text = "Check-In";
+            btnMenu_CheckIn.Text = "Reservar";
             btnMenu_CheckIn.TextAlign = ContentAlignment.MiddleLeft;
             btnMenu_CheckIn.UseVisualStyleBackColor = true;
             // 
@@ -240,7 +240,7 @@
         private Panel panel1;
         private UserControls.ReservarUC checkInuc1;
         public UserControls.ReservacionUC ReservacionUC;
-        public UserControls.CheckInUC CheckInUC;
+        public UserControls.ReservarUC CheckInUC;
         public Panel panelMenu_SidePanel;
         public Button btnMenu_Inicio;
         public UserControls.InicioUC InicioUC;
