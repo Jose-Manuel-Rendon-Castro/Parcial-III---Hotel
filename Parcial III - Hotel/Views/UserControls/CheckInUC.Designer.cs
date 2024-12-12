@@ -32,13 +32,13 @@
             panel1 = new Panel();
             dtgvCheckInUC_Lista = new DataGridView();
             dtgvCheckInUC_Selected = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
+            btnCheckInUC_ConfirmarCheckIn = new Button();
+            ID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
-            btnCheckInUC_ConfirmarCheckIn = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckInUC_Lista).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckInUC_Selected).BeginInit();
             SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             dtgvCheckInUC_Selected.AllowUserToAddRows = false;
             dtgvCheckInUC_Selected.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvCheckInUC_Selected.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
+            dtgvCheckInUC_Selected.Columns.AddRange(new DataGridViewColumn[] { ID, Column2, Column3, Column4, Column5, Column6 });
             dtgvCheckInUC_Selected.EditMode = DataGridViewEditMode.EditProgrammatically;
             dtgvCheckInUC_Selected.Location = new Point(41, 504);
             dtgvCheckInUC_Selected.Name = "dtgvCheckInUC_Selected";
@@ -90,12 +90,25 @@
             dtgvCheckInUC_Selected.Size = new Size(1328, 58);
             dtgvCheckInUC_Selected.TabIndex = 3;
             // 
-            // Column1
+            // btnCheckInUC_ConfirmarCheckIn
             // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
+            btnCheckInUC_ConfirmarCheckIn.BackColor = SystemColors.ActiveCaption;
+            btnCheckInUC_ConfirmarCheckIn.BackgroundImageLayout = ImageLayout.None;
+            btnCheckInUC_ConfirmarCheckIn.FlatAppearance.BorderSize = 3;
+            btnCheckInUC_ConfirmarCheckIn.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCheckInUC_ConfirmarCheckIn.Location = new Point(41, 689);
+            btnCheckInUC_ConfirmarCheckIn.Name = "btnCheckInUC_ConfirmarCheckIn";
+            btnCheckInUC_ConfirmarCheckIn.Size = new Size(437, 81);
+            btnCheckInUC_ConfirmarCheckIn.TabIndex = 4;
+            btnCheckInUC_ConfirmarCheckIn.Text = "Confirmar Check-In";
+            btnCheckInUC_ConfirmarCheckIn.UseVisualStyleBackColor = false;
+            // 
+            // ID
+            // 
+            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
             // 
             // Column2
             // 
@@ -128,22 +141,9 @@
             // Column6
             // 
             Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column6.HeaderText = "Estado de paga";
+            Column6.HeaderText = "Estado de Check";
             Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
-            // 
-            // btnCheckInUC_ConfirmarCheckIn
-            // 
-            btnCheckInUC_ConfirmarCheckIn.BackColor = SystemColors.ActiveCaption;
-            btnCheckInUC_ConfirmarCheckIn.BackgroundImageLayout = ImageLayout.None;
-            btnCheckInUC_ConfirmarCheckIn.FlatAppearance.BorderSize = 3;
-            btnCheckInUC_ConfirmarCheckIn.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCheckInUC_ConfirmarCheckIn.Location = new Point(41, 689);
-            btnCheckInUC_ConfirmarCheckIn.Name = "btnCheckInUC_ConfirmarCheckIn";
-            btnCheckInUC_ConfirmarCheckIn.Size = new Size(437, 81);
-            btnCheckInUC_ConfirmarCheckIn.TabIndex = 4;
-            btnCheckInUC_ConfirmarCheckIn.Text = "Confirmar Check-In";
-            btnCheckInUC_ConfirmarCheckIn.UseVisualStyleBackColor = false;
             // 
             // CheckInUC
             // 
@@ -169,7 +169,7 @@
         public Button btnCheckInUC_ConfirmarCheckIn;
         public DataGridView dtgvCheckInUC_Lista;
         public DataGridView dtgvCheckInUC_Selected;
-        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;

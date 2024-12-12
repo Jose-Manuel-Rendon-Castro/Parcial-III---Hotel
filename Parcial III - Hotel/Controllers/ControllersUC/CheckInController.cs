@@ -14,14 +14,33 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
             _checkInUC.dtgvCheckInUC_Lista.CellContentClick += dtgvCheckInUC_Lista_CellContentClick;
         } 
 
+        private void updateTable()
+        {
+            foreach (DataGridViewRow row in _checkInUC.dtgvCheckInUC_Lista.Rows)
+            {
+                string? status = row.Cells["Estado_Checks"].Value?.ToString();
+                if (status == "Pendiente")
+                {
+                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Red;
+                }
+                else
+                {
+                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Green;
+                }
+            }
+            _checkInUC.dtgvCheckInUC_Lista.Invalidate();
+        }
+
         private void btnCheckInUC_ConfirmarCheckIn_Click (object? sender, EventArgs e)
         {
             CheckInDAO.UpdateCheckStatus(_checkInUC.dtgvCheckInUC_Selected);
+            _checkInUC.dtgvCheckInUC_Selected.Rows.Clear();
         }
 
         public void Load (object? sender, EventArgs e)
         {
             CheckInDAO.TablaHuespedes(_checkInUC.dtgvCheckInUC_Lista);
+            updateTable();
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.HeaderText = "Hacer Check-In";
             btn.Name = "btnCheckInUC_dtgvTransfer";
@@ -56,7 +75,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                 }
                 else
                 {
-                    MessageBox.Show("Reservación siendo usada");
+                    MessageBox.Show("Habitación en uso");
                 }
             }
         }
