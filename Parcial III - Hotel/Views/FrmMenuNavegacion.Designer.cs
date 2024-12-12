@@ -39,7 +39,7 @@
             btnMenu_Reservar = new Button();
             btnMenu_Salir = new Button();
             lblMenu_Copyright = new Label();
-            ReservarUC = new UserControls.ReservarUC();
+            CheckInUC = new UserControls.ReservarUC();
             ReservacionUC = new UserControls.ReservacionUC();
             InicioUC = new UserControls.InicioUC();
             panelMenu_CheckInUC = new UserControls.CheckInUC();
@@ -140,16 +140,16 @@
             // 
             // btnMenu_Reservar
             // 
-            btnMenu_Reservar.FlatAppearance.BorderSize = 0;
-            btnMenu_Reservar.FlatStyle = FlatStyle.Flat;
-            btnMenu_Reservar.Font = new Font("Microsoft YaHei UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnMenu_Reservar.Location = new Point(12, 249);
-            btnMenu_Reservar.Name = "btnMenu_Reservar";
-            btnMenu_Reservar.Size = new Size(331, 86);
-            btnMenu_Reservar.TabIndex = 5;
-            btnMenu_Reservar.Text = "Reservar";
-            btnMenu_Reservar.TextAlign = ContentAlignment.MiddleLeft;
-            btnMenu_Reservar.UseVisualStyleBackColor = true;
+            btnMenu_CheckIn.FlatAppearance.BorderSize = 0;
+            btnMenu_CheckIn.FlatStyle = FlatStyle.Flat;
+            btnMenu_CheckIn.Font = new Font("Microsoft YaHei UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMenu_CheckIn.Location = new Point(12, 249);
+            btnMenu_CheckIn.Name = "btnMenu_CheckIn";
+            btnMenu_CheckIn.Size = new Size(331, 86);
+            btnMenu_CheckIn.TabIndex = 5;
+            btnMenu_CheckIn.Text = "Reservar";
+            btnMenu_CheckIn.TextAlign = ContentAlignment.MiddleLeft;
+            btnMenu_CheckIn.UseVisualStyleBackColor = true;
             // 
             // btnMenu_Salir
             // 
@@ -240,7 +240,7 @@
         private Panel panel1;
         private UserControls.ReservarUC checkInuc1;
         public UserControls.ReservacionUC ReservacionUC;
-        public UserControls.ReservarUC ReservarUC;
+        public UserControls.ReservarUC CheckInUC;
         public Panel panelMenu_SidePanel;
         public Button btnMenu_Inicio;
         public UserControls.InicioUC InicioUC;
