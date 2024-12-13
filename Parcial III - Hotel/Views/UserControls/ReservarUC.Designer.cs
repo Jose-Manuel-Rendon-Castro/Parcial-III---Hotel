@@ -34,14 +34,17 @@
             lblReservarUC_Membresia = new Label();
             lblReservarUC_FechaEntrada = new Label();
             lblReservarUC_FechaSalida = new Label();
-            dtgvReservarUC_MostrarHabitaciones = new DataGridView();
+            dtgvReservarUC_Habitaciones = new DataGridView();
             txtbReservarUC_Nombre = new TextBox();
             txtbReservarUC_Celular = new TextBox();
             txtbReservarUC_Correo = new TextBox();
             cmboxReservarUC_Membresia = new ComboBox();
             dtpReservarUC_FechaEntrada = new DateTimePicker();
             dtpReservarUC_FechaSalida = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)dtgvReservarUC_MostrarHabitaciones).BeginInit();
+            btnReservarUC_MostrarHabitaciones = new Button();
+            btnReservarUC_Cotizar = new Button();
+            btnReservarUC_Reservar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dtgvReservarUC_Habitaciones).BeginInit();
             SuspendLayout();
             // 
             // lblReservarUC_Nombre
@@ -104,14 +107,14 @@
             lblReservarUC_FechaSalida.TabIndex = 6;
             lblReservarUC_FechaSalida.Text = "Fecha de salida";
             // 
-            // dtgvReservarUC_MostrarHabitaciones
+            // dtgvReservarUC_Habitaciones
             // 
-            dtgvReservarUC_MostrarHabitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvReservarUC_MostrarHabitaciones.Location = new Point(650, 235);
-            dtgvReservarUC_MostrarHabitaciones.Name = "dtgvReservarUC_MostrarHabitaciones";
-            dtgvReservarUC_MostrarHabitaciones.RowHeadersWidth = 51;
-            dtgvReservarUC_MostrarHabitaciones.Size = new Size(664, 373);
-            dtgvReservarUC_MostrarHabitaciones.TabIndex = 7;
+            dtgvReservarUC_Habitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvReservarUC_Habitaciones.Location = new Point(650, 235);
+            dtgvReservarUC_Habitaciones.Name = "dtgvReservarUC_Habitaciones";
+            dtgvReservarUC_Habitaciones.RowHeadersWidth = 51;
+            dtgvReservarUC_Habitaciones.Size = new Size(664, 373);
+            dtgvReservarUC_Habitaciones.TabIndex = 7;
             // 
             // txtbReservarUC_Nombre
             // 
@@ -163,18 +166,52 @@
             dtpReservarUC_FechaSalida.TabIndex = 13;
             dtpReservarUC_FechaSalida.Value = new DateTime(2024, 12, 13, 0, 0, 0, 0);
             // 
+            // btnReservarUC_MostrarHabitaciones
+            // 
+            btnReservarUC_MostrarHabitaciones.Font = new Font("Microsoft YaHei UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReservarUC_MostrarHabitaciones.Location = new Point(661, 172);
+            btnReservarUC_MostrarHabitaciones.Name = "btnReservarUC_MostrarHabitaciones";
+            btnReservarUC_MostrarHabitaciones.Size = new Size(404, 41);
+            btnReservarUC_MostrarHabitaciones.TabIndex = 14;
+            btnReservarUC_MostrarHabitaciones.Text = "Checar habitaciones disponibles";
+            btnReservarUC_MostrarHabitaciones.UseVisualStyleBackColor = true;
+            // 
+            // btnReservarUC_Cotizar
+            // 
+            btnReservarUC_Cotizar.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReservarUC_Cotizar.Location = new Point(661, 627);
+            btnReservarUC_Cotizar.Name = "btnReservarUC_Cotizar";
+            btnReservarUC_Cotizar.Size = new Size(133, 41);
+            btnReservarUC_Cotizar.TabIndex = 15;
+            btnReservarUC_Cotizar.Text = "Cotizar";
+            btnReservarUC_Cotizar.UseVisualStyleBackColor = true;
+            // 
+            // btnReservarUC_Reservar
+            // 
+            btnReservarUC_Reservar.BackColor = Color.PaleGreen;
+            btnReservarUC_Reservar.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReservarUC_Reservar.Location = new Point(820, 627);
+            btnReservarUC_Reservar.Name = "btnReservarUC_Reservar";
+            btnReservarUC_Reservar.Size = new Size(133, 41);
+            btnReservarUC_Reservar.TabIndex = 16;
+            btnReservarUC_Reservar.Text = "Reservar";
+            btnReservarUC_Reservar.UseVisualStyleBackColor = false;
+            // 
             // ReservarUC
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
+            Controls.Add(btnReservarUC_Reservar);
+            Controls.Add(btnReservarUC_Cotizar);
+            Controls.Add(btnReservarUC_MostrarHabitaciones);
             Controls.Add(dtpReservarUC_FechaSalida);
             Controls.Add(dtpReservarUC_FechaEntrada);
             Controls.Add(cmboxReservarUC_Membresia);
             Controls.Add(txtbReservarUC_Correo);
             Controls.Add(txtbReservarUC_Celular);
             Controls.Add(txtbReservarUC_Nombre);
-            Controls.Add(dtgvReservarUC_MostrarHabitaciones);
+            Controls.Add(dtgvReservarUC_Habitaciones);
             Controls.Add(lblReservarUC_FechaSalida);
             Controls.Add(lblReservarUC_FechaEntrada);
             Controls.Add(lblReservarUC_Membresia);
@@ -183,7 +220,7 @@
             Controls.Add(lblReservarUC_Nombre);
             Name = "ReservarUC";
             Size = new Size(1448, 804);
-            ((System.ComponentModel.ISupportInitialize)dtgvReservarUC_MostrarHabitaciones).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvReservarUC_Habitaciones).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,12 +232,15 @@
         private Label lblReservarUC_Membresia;
         private Label lblReservarUC_FechaEntrada;
         private Label lblReservarUC_FechaSalida;
-        public DataGridView dtgvReservarUC_MostrarHabitaciones;
+        public DataGridView dtgvReservarUC_Habitaciones;
         public TextBox txtbReservarUC_Nombre;
         public TextBox txtbReservarUC_Celular;
         public TextBox txtbReservarUC_Correo;
         public ComboBox cmboxReservarUC_Membresia;
         public DateTimePicker dtpReservarUC_FechaEntrada;
         public DateTimePicker dtpReservarUC_FechaSalida;
+        public Button btnReservarUC_MostrarHabitaciones;
+        public Button btnReservarUC_Cotizar;
+        public Button btnReservarUC_Reservar;
     }
 }
