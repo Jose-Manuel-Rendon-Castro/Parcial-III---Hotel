@@ -18,12 +18,12 @@ namespace Parcial_III___Hotel.Controllers
         public ReservarController(ReservarUC reservarUC)
         {
             _reservarUC = reservarUC;
-            _reservarUC.btnReservar_ChecarHabitaciones.Click += btnReservar_ChecarHabitaciones_Click;
-            _reservarUC.btnReservar_Cotizar.Click += btnReservar_Cotizar_Click;
-            _reservarUC.btnReservar_CrearReservacion.Click += btnReservar_CrearReservacion_Click;
+            _reservarUC.btnReservarUC_MostrarHabitaciones.Click += btnReservarUC_MostrarHabitaciones_Click;
+            _reservarUC.btnReservarUC_Cotizar.Click += btnReservarUC_Cotizar_Click;
+            _reservarUC.btnReservarUC_Reservar.Click += btnReservarUC_Reservar_Click;
         }
 
-        private void btnReservar_ChecarHabitaciones_Click(object? sender, EventArgs e)
+        private void btnReservarUC_MostrarHabitaciones_Click(object? sender, EventArgs e)
         {
             string constring = "Server=localhost;Database=SuiteSavage;Uid=root;Pwd=0000";
             MySqlConnection conDataBase = new MySqlConnection(constring);
@@ -38,7 +38,7 @@ namespace Parcial_III___Hotel.Controllers
                 BindingSource bSource = new BindingSource();
 
                 bSource.DataSource = dbDataSet;
-                _reservarUC.dgvReservar_MostrarHabitaciones.DataSource = bSource;
+                _reservarUC.dtgvReservarUC_Habitaciones.DataSource = bSource;
                 sqlDataAdapter.Update(dbDataSet);
             }
             catch (Exception ex)
@@ -51,81 +51,81 @@ namespace Parcial_III___Hotel.Controllers
         private bool ValidateForm()
         {
             // Validate Name textbox
-            if (string.IsNullOrWhiteSpace(_reservarUC.txtReservar_Nombre.Text))
+            if (string.IsNullOrWhiteSpace(_reservarUC.txtbReservarUC_Nombre.Text))
             {
                 MessageBox.Show("El campo Nombre no puede estar vacio.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (_reservarUC.txtReservar_Nombre.Text.Length > 35)
+            if (_reservarUC.txtbReservarUC_Nombre.Text.Length > 35)
             {
                 MessageBox.Show("El campo Nombre no puede exeder 35 caracteres.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (_reservarUC.txtReservar_Nombre.Text.Any(char.IsDigit)) // Check if the Name contains numbers
+            if (_reservarUC.txtbReservarUC_Nombre.Text.Any(char.IsDigit)) // Check if the Name contains numbers
             {
                 MessageBox.Show("El campo Nombre no puede contener digitos.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             // Validate Phone textbox
-            if (string.IsNullOrWhiteSpace(_reservarUC.txtReservar_Celular.Text))
+            if (string.IsNullOrWhiteSpace(_reservarUC.txtbReservarUC_Celular.Text))
             {
                 MessageBox.Show("El campo Celular no puede estar vacio.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (_reservarUC.txtReservar_Celular.Text.Length < 10)
+            if (_reservarUC.txtbReservarUC_Celular.Text.Length < 10)
             {
                 MessageBox.Show("El campo Celular no puede ser menos de 10 digitos.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (_reservarUC.txtReservar_Celular.Text.Length > 10)
+            if (_reservarUC.txtbReservarUC_Celular.Text.Length > 10)
             {
                 MessageBox.Show("El campo Celular no puede ser mayor de 10 digitos.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (!long.TryParse(_reservarUC.txtReservar_Celular.Text, out _))
+            if (!long.TryParse(_reservarUC.txtbReservarUC_Celular.Text, out _))
             {
                 MessageBox.Show("El campo Celular solo debe contener digitos.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             // Validate Email textbox
-            if (string.IsNullOrWhiteSpace(_reservarUC.txtReservar_Correo.Text))
+            if (string.IsNullOrWhiteSpace(_reservarUC.txtbReservarUC_Correo.Text))
             {
                 MessageBox.Show("El campo Correo no puede estar vacio.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (!_reservarUC.txtReservar_Correo.Text.Contains("@") || !_reservarUC.txtReservar_Correo.Text.EndsWith(".com"))
+            if (!_reservarUC.txtbReservarUC_Correo.Text.Contains("@") || !_reservarUC.txtbReservarUC_Correo.Text.EndsWith(".com"))
             {
                 MessageBox.Show("El campo Correo debe contener un correo valido (por ejemplo, example@example.com).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             // Validate Membership combobox
-            if (_reservarUC.comboBox_ReservarUC_TipoDeMembresia.SelectedIndex == -1)
+            if (_reservarUC.cmboxReservarUC_Membresia.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor seleccione un tipo de membresia.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             // Validate Start Date datetimepicker
-            if (!_reservarUC.dtpReserva_FechaInicio.Checked)
+            if (!_reservarUC.dtpReservarUC_FechaEntrada.Checked)
             {
                 MessageBox.Show("Por favor eliga una fecha de inicio.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             // Validate End Date datetimepicker
-            if (!_reservarUC.dtpReservar_FechaSalida.Checked)
+            if (!_reservarUC.dtpReservarUC_FechaSalida.Checked)
             {
                 MessageBox.Show("Por favor eliga una fecha de salida.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (_reservarUC.dtpReservar_FechaSalida.Value <= _reservarUC.dtpReserva_FechaInicio.Value)
+            if (_reservarUC.dtpReservarUC_FechaSalida.Value <= _reservarUC.dtpReservarUC_FechaEntrada.Value)
             {
                 MessageBox.Show("La fecha de salida no puede ser antes de la fecha de inicio.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -135,19 +135,19 @@ namespace Parcial_III___Hotel.Controllers
             return true;
         }
 
-        private void btnReservar_Cotizar_Click(object? sender, EventArgs e)
+        private void btnReservarUC_Cotizar_Click(object? sender, EventArgs e)
         {
             if (ValidateForm())
             {
                 try
                 {
-                    if (_reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows.Count == 0)
+                    if (_reservarUC.dtgvReservarUC_Habitaciones.SelectedRows.Count == 0)
                     {
                         MessageBox.Show("Por favor seleccione una fila de la tabla.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     } 
 
-                    DataGridViewRow SelectedRow = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0];
+                    DataGridViewRow SelectedRow = _reservarUC.dtgvReservarUC_Habitaciones.SelectedRows[0];
 
                     if (!SelectedRow.Cells["precio"].Value.ToString().All(char.IsDigit))
                     {
@@ -156,14 +156,14 @@ namespace Parcial_III___Hotel.Controllers
 
                     double nightlyRate = Convert.ToDouble(SelectedRow.Cells["precio"].Value);
 
-                    if (!_reservarUC.dtpReserva_FechaInicio.Checked || !_reservarUC.dtpReservar_FechaSalida.Checked)
+                    if (!_reservarUC.dtpReservarUC_FechaEntrada.Checked || !_reservarUC.dtpReservarUC_FechaSalida.Checked)
                     {
                         MessageBox.Show("Por favor eliga una valida fecha de inicio.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
-                    DateTime startDate = _reservarUC.dtpReserva_FechaInicio.Value;
-                    DateTime endDate = _reservarUC.dtpReservar_FechaSalida.Value;
+                    DateTime startDate = _reservarUC.dtpReservarUC_FechaEntrada.Value;
+                    DateTime endDate = _reservarUC.dtpReservarUC_FechaSalida.Value;
 
                     if (endDate <= startDate)
                     {
@@ -187,20 +187,20 @@ namespace Parcial_III___Hotel.Controllers
             }
         }
 
-        private void btnReservar_CrearReservacion_Click(object? sender, EventArgs e)
+        private void btnReservarUC_Reservar_Click(object? sender, EventArgs e)
         {
             try
             {
                 // Get values from form controls
-                string? guestEmail = _reservarUC.txtReservar_Correo.Text;
-                string? guestName = _reservarUC.txtReservar_Nombre.Text;
-                string phone = _reservarUC.txtReservar_Celular.Text;
-                string? membershipType = _reservarUC.comboBox_ReservarUC_TipoDeMembresia.SelectedItem?.ToString();
-                DateTime checkInDate = _reservarUC.dtpReserva_FechaInicio.Value;
-                DateTime checkOutDate = _reservarUC.dtpReservar_FechaSalida.Value;
-                string? roomType = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0].Cells["Tipo_Habitacion"].Value.ToString();
-                string? roomCapacity = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0].Cells["Capacidad"].Value.ToString();
-                string? roomNumber = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0].Cells["NumHabitacion"].Value.ToString();
+                string? guestName = _reservarUC.txtbReservarUC_Nombre.Text;
+                string phone = _reservarUC.txtbReservarUC_Celular.Text;
+                string? guestEmail = _reservarUC.txtbReservarUC_Correo.Text;
+                string? membershipType = _reservarUC.cmboxReservarUC_Membresia.SelectedItem?.ToString();
+                DateTime checkInDate = _reservarUC.dtpReservarUC_FechaEntrada.Value;
+                DateTime checkOutDate = _reservarUC.dtpReservarUC_FechaSalida.Value;
+                string? roomType = _reservarUC.dtgvReservarUC_Habitaciones.SelectedRows[0].Cells["Tipo_Habitacion"].Value.ToString();
+                string? roomCapacity = _reservarUC.dtgvReservarUC_Habitaciones.SelectedRows[0].Cells["Capacidad"].Value.ToString();
+                string? roomNumber = _reservarUC.dtgvReservarUC_Habitaciones.SelectedRows[0].Cells["NumHabitacion"].Value.ToString();
                 double totalAmount = totalQuote;
 
                 // Connection string
