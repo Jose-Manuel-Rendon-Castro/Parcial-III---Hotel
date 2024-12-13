@@ -33,8 +33,6 @@
             cmbDisponibilidad = new ComboBox();
             lblDisponibilidad = new Label();
             cmbVista = new ComboBox();
-            cmbTipo_Habitacion = new ComboBox();
-            txtPrecio = new TextBox();
             txtBusquedaNPersona = new TextBox();
             dataGridViewHabitaciones = new DataGridView();
             imgMostrar = new PictureBox();
@@ -53,11 +51,18 @@
             btnLimpiarCampos = new Button();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
+            numPrecioMax = new NumericUpDown();
+            numPrecioMin = new NumericUpDown();
+            label8 = new Label();
+            label9 = new Label();
+            cmbTipoHabitacion = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewHabitaciones).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgMostrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgLimpieza).BeginInit();
             ((System.ComponentModel.ISupportInitialize)calendario1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)calendario2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numPrecioMax).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numPrecioMin).BeginInit();
             SuspendLayout();
             // 
             // btnMostrar
@@ -100,21 +105,6 @@
             cmbVista.Size = new Size(182, 33);
             cmbVista.TabIndex = 6;
             // 
-            // cmbTipo_Habitacion
-            // 
-            cmbTipo_Habitacion.FormattingEnabled = true;
-            cmbTipo_Habitacion.Location = new Point(93, 332);
-            cmbTipo_Habitacion.Name = "cmbTipo_Habitacion";
-            cmbTipo_Habitacion.Size = new Size(182, 33);
-            cmbTipo_Habitacion.TabIndex = 7;
-            // 
-            // txtPrecio
-            // 
-            txtPrecio.Location = new Point(400, 188);
-            txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(150, 31);
-            txtPrecio.TabIndex = 9;
-            // 
             // txtBusquedaNPersona
             // 
             txtBusquedaNPersona.Location = new Point(883, 161);
@@ -130,7 +120,7 @@
             dataGridViewHabitaciones.RowHeadersWidth = 62;
             dataGridViewHabitaciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewHabitaciones.ShowCellToolTips = false;
-            dataGridViewHabitaciones.Size = new Size(1810, 587);
+            dataGridViewHabitaciones.Size = new Size(1810, 611);
             dataGridViewHabitaciones.TabIndex = 13;
             // 
             // imgMostrar
@@ -172,7 +162,7 @@
             lblPrecio.AutoSize = true;
             lblPrecio.BackColor = Color.MediumTurquoise;
             lblPrecio.Font = new Font("Times New Roman", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblPrecio.Location = new Point(426, 127);
+            lblPrecio.Location = new Point(422, 115);
             lblPrecio.Name = "lblPrecio";
             lblPrecio.Size = new Size(77, 28);
             lblPrecio.TabIndex = 18;
@@ -186,9 +176,9 @@
             label1.Location = new Point(89, 272);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.No;
-            label1.Size = new Size(186, 28);
+            label1.Size = new Size(198, 28);
             label1.TabIndex = 19;
-            label1.Text = "Tipo de habitacin";
+            label1.Text = "Tipo de habitacion";
             // 
             // label2
             // 
@@ -297,7 +287,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(653, 241);
+            dateTimePicker1.Location = new Point(1229, 47);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(300, 31);
             dateTimePicker1.TabIndex = 31;
@@ -305,17 +295,72 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(1064, 231);
+            dateTimePicker2.Location = new Point(1260, 115);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(300, 31);
             dateTimePicker2.TabIndex = 32;
             dateTimePicker2.Visible = false;
+            // 
+            // numPrecioMax
+            // 
+            numPrecioMax.Location = new Point(578, 190);
+            numPrecioMax.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
+            numPrecioMax.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
+            numPrecioMax.Name = "numPrecioMax";
+            numPrecioMax.Size = new Size(92, 31);
+            numPrecioMax.TabIndex = 33;
+            numPrecioMax.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            // 
+            // numPrecioMin
+            // 
+            numPrecioMin.Location = new Point(396, 190);
+            numPrecioMin.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
+            numPrecioMin.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
+            numPrecioMin.Name = "numPrecioMin";
+            numPrecioMin.Size = new Size(92, 31);
+            numPrecioMin.TabIndex = 34;
+            numPrecioMin.Value = new decimal(new int[] { 100, 0, 0, 0 });
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.MediumTurquoise;
+            label8.Font = new Font("Times New Roman", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label8.Location = new Point(337, 190);
+            label8.Name = "label8";
+            label8.Size = new Size(40, 28);
+            label8.TabIndex = 35;
+            label8.Text = "De";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.MediumTurquoise;
+            label9.Font = new Font("Times New Roman", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label9.Location = new Point(516, 193);
+            label9.Name = "label9";
+            label9.Size = new Size(28, 28);
+            label9.TabIndex = 36;
+            label9.Text = "A";
+            // 
+            // cmbTipoHabitacion
+            // 
+            cmbTipoHabitacion.FormattingEnabled = true;
+            cmbTipoHabitacion.Location = new Point(105, 332);
+            cmbTipoHabitacion.Name = "cmbTipoHabitacion";
+            cmbTipoHabitacion.Size = new Size(182, 33);
+            cmbTipoHabitacion.TabIndex = 37;
             // 
             // ReservacionUC
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumTurquoise;
+            Controls.Add(cmbTipoHabitacion);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(numPrecioMin);
+            Controls.Add(numPrecioMax);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
             Controls.Add(btnLimpiarCampos);
@@ -334,8 +379,6 @@
             Controls.Add(imgLimpieza);
             Controls.Add(dataGridViewHabitaciones);
             Controls.Add(txtBusquedaNPersona);
-            Controls.Add(txtPrecio);
-            Controls.Add(cmbTipo_Habitacion);
             Controls.Add(cmbVista);
             Controls.Add(lblDisponibilidad);
             Controls.Add(cmbDisponibilidad);
@@ -348,6 +391,8 @@
             ((System.ComponentModel.ISupportInitialize)imgLimpieza).EndInit();
             ((System.ComponentModel.ISupportInitialize)calendario1).EndInit();
             ((System.ComponentModel.ISupportInitialize)calendario2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numPrecioMax).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numPrecioMin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -356,9 +401,6 @@
         public Button btnMostrar;
         public ComboBox cmbDisponibilidad;
         private Label lblDisponibilidad;
-        private ComboBox cmbVista;
-        private ComboBox cmbTipo_Habitacion;
-        public TextBox txtPrecio;
         public TextBox txtBusquedaNPersona;
         public DataGridView dataGridViewHabitaciones;
         private PictureBox imgMostrar;
@@ -377,5 +419,11 @@
         public Button btnLimpiarCampos;
         public DateTimePicker dateTimePicker1;
         public DateTimePicker dateTimePicker2;
+        public ComboBox cmbVista;
+        private Label label8;
+        private Label label9;
+        public NumericUpDown numPrecioMin;
+        public NumericUpDown numPrecioMax;
+        public ComboBox cmbTipoHabitacion;
     }
 }
