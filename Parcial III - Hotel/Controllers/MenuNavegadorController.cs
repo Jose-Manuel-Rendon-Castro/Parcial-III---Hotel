@@ -47,6 +47,7 @@ namespace Parcial_III___Hotel.Controllers
         {
             _frmMenuNavegacion.panelMenu_SidePanel.Height = _frmMenuNavegacion.btnMenu_Reservacion.Height;
             _frmMenuNavegacion.panelMenu_SidePanel.Top = _frmMenuNavegacion.btnMenu_Reservacion.Top;
+            _frmMenuNavegacion.panelReservacionUC.BringToFront();
         }
 
         private void btnMenu_Salir_Click (object? sender, EventArgs e)

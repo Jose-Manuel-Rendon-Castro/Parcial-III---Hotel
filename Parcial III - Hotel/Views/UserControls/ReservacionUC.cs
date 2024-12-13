@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial_III___Hotel.Controllers.ControllersUC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace Parcial_III___Hotel.Views.UserControls
 {
     public partial class ReservacionUC : UserControl
     {
+        private ReservacionController _reservacionController;
+
         public ReservacionUC()
         {
             InitializeComponent();
+            _reservacionController = new ReservacionController(this);
+
+
         }
     }
 }
