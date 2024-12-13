@@ -22,5 +22,8 @@ namespace Parcial_III___Hotel.Views.UserControls
 
 
         }
+
+      
+
     }
 }
