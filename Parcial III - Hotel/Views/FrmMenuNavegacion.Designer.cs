@@ -40,7 +40,7 @@
             panelMenu_SidePanel = new Panel();
             btnMenu_Salir = new Button();
             lblMenu_Copyright = new Label();
-            ReservarUC = new UserControls.ReservarUC()
+            ReservarUC = new UserControls.ReservarUC();
             panelMenu_InicioUC = new UserControls.InicioUC();
             panelMenu_ReservarUC = new UserControls.ReservarUC();
             panelMenu_CheckInUC = new UserControls.CheckInUC();

@@ -28,6 +28,8 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
                             {
                                 dataTable.Load(reader);
                                 dataGridView.DataSource = dataTable;
+                                dataGridView.Columns["Nombre"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
                             }
                         }
                     }

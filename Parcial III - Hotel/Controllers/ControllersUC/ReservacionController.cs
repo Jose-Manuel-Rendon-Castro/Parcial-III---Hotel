@@ -28,7 +28,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
             _reservacion1.calendario1.DoubleClick += Calendario1_DoubleClick;
             _reservacion1.calendario2.DoubleClick += Calendario2_DoubleClick;
             _reservacion1.btnLimpiarCampos.Click += BtnLimpiarCampos_Click;
-            
+            // editar datagrid ejemplo datagrid.columns
 
             #region "convertir num en text"
             _reservacion1.numPrecioMin.Text = string.Empty;
