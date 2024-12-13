@@ -16,9 +16,6 @@ namespace Parcial_III___Hotel.Views
             CheckInUC checkInUC = new CheckInUC();
             _checkInController = new CheckInController(checkInUC);
             _menuNavegadorController = new MenuNavegadorController(this, _checkInController);
-
-
-
         }
     }
 }
