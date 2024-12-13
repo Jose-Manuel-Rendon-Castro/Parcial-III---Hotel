@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Parcial_III___Hotel.Models;
+using Parcial_III___Hotel.DAO;
 
 namespace Parcial_III___Hotel.DataAccessObject
 {
@@ -7,7 +8,7 @@ namespace Parcial_III___Hotel.DataAccessObject
     {
         public static Usuario? Login(string input_nombreUsuario, string input_contraseña)
         {
-            string loginQuery = "SELECT COUNT(*) FROM Usuarios WHERE nombre_usuario = @nombre_usuario AND contraseña = @contraseña";
+            string loginQuery = "SELECT COUNT(*) FROM Usuarios WHERE Nombre_Usuario = @Nombre_Usuario AND Contraseña = @Contraseña";
 
             try
             {
@@ -16,8 +17,8 @@ namespace Parcial_III___Hotel.DataAccessObject
                     conn.Open();
                     using (MySqlCommand loginCommand = new MySqlCommand(loginQuery, conn))
                     {
-                        loginCommand.Parameters.AddWithValue("@nombre_usuario", input_nombreUsuario.Trim());
-                        loginCommand.Parameters.AddWithValue("@contraseña", input_contraseña.Trim());
+                        loginCommand.Parameters.AddWithValue("@Nombre_Usuario", input_nombreUsuario.Trim());
+                        loginCommand.Parameters.AddWithValue("Contraseña", input_contraseña.Trim());
 
                         int result = Convert.ToInt32(loginCommand.ExecuteScalar());
                         if (result > 0)
@@ -38,25 +39,25 @@ namespace Parcial_III___Hotel.DataAccessObject
 
         private static Usuario? getUsuarioData(string input_nombreUsuario, string input_contraseña)
         {
-            string getDataQuery = "SELECT * FROM Usuarios WHERE nombre_usuario = @nombre_usuario AND contraseña = @contraseña";
+            string getDataQuery = "SELECT * FROM Usuarios WHERE Nombre_Usuario = @Nombre_Usuario AND Contraseña = @Contraseña";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
                 using (MySqlCommand getDataCommand = new MySqlCommand(getDataQuery, conn))
                 {
-                    getDataCommand.Parameters.AddWithValue("@nombre_usuario", input_nombreUsuario.Trim());
-                    getDataCommand.Parameters.AddWithValue("@contraseña", input_contraseña.Trim());
+                    getDataCommand.Parameters.AddWithValue("@nombre_Usuario", input_nombreUsuario.Trim());
+                    getDataCommand.Parameters.AddWithValue("@Contraseña", input_contraseña.Trim());
                     using (MySqlDataReader reader = getDataCommand.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             Usuario usuario = new Usuario
                             {
-                                id = reader.GetInt32("id"),
-                                nombreUsuario = reader.GetString("nombre_usuario"),
-                                contraseña = reader.GetString("contraseña"),
-                                tipoUsuario = reader.GetString("tipo_usuario")
+                                id = reader.GetInt32("Id"),
+                                nombreUsuario = reader.GetString("Nombre_Usuario"),
+                                contraseña = reader.GetString("Contraseña"),
+                                tipoUsuario = reader.GetString("Tipo_Usuario")
                             };
                             return usuario;
                         }
