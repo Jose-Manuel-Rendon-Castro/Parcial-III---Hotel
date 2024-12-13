@@ -12,7 +12,8 @@ namespace Parcial_III___Hotel.Controllers
 {
     public class ReservarController
     {
-        private ReservarUC _reservarUC; private double totalQuote;
+        private ReservarUC _reservarUC;
+        private double totalQuote;
 
         public ReservarController(ReservarUC reservarUC)
         {
@@ -191,15 +192,15 @@ namespace Parcial_III___Hotel.Controllers
             try
             {
                 // Get values from form controls
-                string guestEmail = _reservarUC.txtReservar_Correo.Text;
-                string guestName = _reservarUC.txtReservar_Nombre.Text;
+                string? guestEmail = _reservarUC.txtReservar_Correo.Text;
+                string? guestName = _reservarUC.txtReservar_Nombre.Text;
                 string phone = _reservarUC.txtReservar_Celular.Text;
-                string membershipType = _reservarUC.comboBox_ReservarUC_TipoDeMembresia.SelectedItem?.ToString();
+                string? membershipType = _reservarUC.comboBox_ReservarUC_TipoDeMembresia.SelectedItem?.ToString();
                 DateTime checkInDate = _reservarUC.dtpReserva_FechaInicio.Value;
                 DateTime checkOutDate = _reservarUC.dtpReservar_FechaSalida.Value;
-                string roomType = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0].Cells["Tipo_Habitacion"].Value.ToString();
-                string roomCapacity = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0].Cells["Capacidad"].Value.ToString();
-                string roomNumber = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0].Cells["NumHabitacion"].Value.ToString();
+                string? roomType = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0].Cells["Tipo_Habitacion"].Value.ToString();
+                string? roomCapacity = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0].Cells["Capacidad"].Value.ToString();
+                string? roomNumber = _reservarUC.dgvReservar_MostrarHabitaciones.SelectedRows[0].Cells["NumHabitacion"].Value.ToString();
                 double totalAmount = totalQuote;
 
                 // Connection string

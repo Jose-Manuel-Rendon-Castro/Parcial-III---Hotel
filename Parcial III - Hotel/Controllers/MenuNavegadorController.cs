@@ -33,7 +33,7 @@ namespace Parcial_III___Hotel.Controllers
         {
             _frmMenuNavegacion.panelMenu_SidePanel.Height = _frmMenuNavegacion.btnMenu_Reservar.Height;
             _frmMenuNavegacion.panelMenu_SidePanel.Top = _frmMenuNavegacion.btnMenu_Reservar.Top;
-            _frmMenuNavegacion.ReservarUC.BringToFront();
+            
         }
         private void btnMenu_CheckIn (object? sender, EventArgs e)
         {
