@@ -25,7 +25,7 @@ namespace Parcial_III___Hotel.Controllers
 
         private void btnReservarUC_MostrarHabitaciones_Click(object? sender, EventArgs e)
         {
-            string constring = "Server=localhost;Database=SuiteSavage;Uid=root;Pwd=0000";
+            string constring = "Server=localhost;Database=suitesavage;Uid=root;Pwd=23040273";
             MySqlConnection conDataBase = new MySqlConnection(constring);
             MySqlCommand cmdDataBase = new MySqlCommand("select numhabitacion, tipo_habitacion, tipo_vista, precio, capacidad from suitesavage.habitaciones where Disponibilidad = 'disponible';", conDataBase);
 
