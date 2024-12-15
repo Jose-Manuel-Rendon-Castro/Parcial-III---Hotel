@@ -45,6 +45,7 @@
             panelMenu_ReservarUC = new UserControls.ReservarUC();
             panelMenu_InicioUC = new UserControls.InicioUC();
             panelMenu_ReservacionUC = new UserControls.ReservacionUC();
+            panelMenu_CheckOutUC = new UserControls.CheckOutUC();
             panelLogin.SuspendLayout();
             panelMenu_Opciones.SuspendLayout();
             SuspendLayout();
@@ -242,11 +243,20 @@
             panelMenu_ReservacionUC.Size = new Size(1267, 603);
             panelMenu_ReservacionUC.TabIndex = 10;
             // 
+            // panelMenu_CheckOutUC
+            // 
+            panelMenu_CheckOutUC.Location = new Point(341, 166);
+            panelMenu_CheckOutUC.Margin = new Padding(3, 2, 3, 2);
+            panelMenu_CheckOutUC.Name = "panelMenu_CheckOutUC";
+            panelMenu_CheckOutUC.Size = new Size(1267, 603);
+            panelMenu_CheckOutUC.TabIndex = 11;
+            // 
             // FrmMenuNavegacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1680, 810);
+            Controls.Add(panelMenu_CheckOutUC);
             Controls.Add(panelMenu_ReservacionUC);
             Controls.Add(panelMenu_InicioUC);
             Controls.Add(panelMenu_ReservarUC);
@@ -287,7 +297,7 @@
         public UserControls.CheckInUC panelMenu_CheckInUC;
         public UserControls.InicioUC panelMenu_InicioUC;
         public Button btnMenu_CheckOut;
-        public UserControls.CheckOutUC panelMenu_CheckOutUC;
         public UserControls.ReservacionUC panelMenu_ReservacionUC;
+        public UserControls.CheckOutUC panelMenu_CheckOutUC;
     }
 }
