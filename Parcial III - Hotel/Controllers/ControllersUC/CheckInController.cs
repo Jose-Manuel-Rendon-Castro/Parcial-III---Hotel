@@ -33,6 +33,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
 
         private void btnCheckInUC_ConfirmarCheckIn_Click (object? sender, EventArgs e)
         {
+
             CheckInDAO.UpdateCheckStatus(_checkInUC.dtgvCheckInUC_Selected);
             _checkInUC.dtgvCheckInUC_Selected.Rows.Clear();
         }
