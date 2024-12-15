@@ -160,12 +160,12 @@
             // 
             btnMenu_Reservacion.FlatAppearance.BorderSize = 0;
             btnMenu_Reservacion.FlatStyle = FlatStyle.Flat;
-            btnMenu_Reservacion.Font = new Font("Microsoft YaHei UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMenu_Reservacion.Font = new Font("Microsoft YaHei UI", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMenu_Reservacion.Location = new Point(12, 515);
             btnMenu_Reservacion.Name = "btnMenu_Reservacion";
             btnMenu_Reservacion.Size = new Size(295, 86);
             btnMenu_Reservacion.TabIndex = 6;
-            btnMenu_Reservacion.Text = "Consultar reservaciones";
+            btnMenu_Reservacion.Text = "Reservacion";
             btnMenu_Reservacion.TextAlign = ContentAlignment.MiddleLeft;
             btnMenu_Reservacion.UseVisualStyleBackColor = true;
             // 
@@ -185,7 +185,7 @@
             btnMenu_Salir.Font = new Font("Microsoft YaHei UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMenu_Salir.Location = new Point(1, 829);
             btnMenu_Salir.Name = "btnMenu_Salir";
-            btnMenu_Salir.Size = new Size(309, 88);
+            btnMenu_Salir.Size = new Size(343, 88);
             btnMenu_Salir.TabIndex = 5;
             btnMenu_Salir.Text = "CERRAR SESIÓN";
             btnMenu_Salir.UseVisualStyleBackColor = false;
