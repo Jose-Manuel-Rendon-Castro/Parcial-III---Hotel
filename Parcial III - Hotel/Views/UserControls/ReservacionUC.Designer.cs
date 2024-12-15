@@ -66,8 +66,9 @@
             // 
             // btnMostrar
             // 
-            btnMostrar.BackColor = Color.CornflowerBlue;
+            btnMostrar.BackColor = SystemColors.ActiveCaption;
             btnMostrar.FlatAppearance.BorderColor = Color.LightCoral;
+            btnMostrar.FlatAppearance.BorderSize = 0;
             btnMostrar.FlatStyle = FlatStyle.Flat;
             btnMostrar.ForeColor = SystemColors.ActiveCaptionText;
             btnMostrar.Location = new Point(1187, 18);
@@ -90,7 +91,7 @@
             // lblDisponibilidad
             // 
             lblDisponibilidad.AutoSize = true;
-            lblDisponibilidad.BackColor = Color.MediumTurquoise;
+            lblDisponibilidad.BackColor = SystemColors.Control;
             lblDisponibilidad.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDisponibilidad.Location = new Point(71, 108);
             lblDisponibilidad.Margin = new Padding(2, 0, 2, 0);
@@ -156,7 +157,7 @@
             // lblVistas
             // 
             lblVistas.AutoSize = true;
-            lblVistas.BackColor = Color.MediumTurquoise;
+            lblVistas.BackColor = SystemColors.Control;
             lblVistas.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblVistas.Location = new Point(338, 232);
             lblVistas.Margin = new Padding(2, 0, 2, 0);
@@ -168,7 +169,7 @@
             // lblPrecio
             // 
             lblPrecio.AutoSize = true;
-            lblPrecio.BackColor = Color.MediumTurquoise;
+            lblPrecio.BackColor = SystemColors.Control;
             lblPrecio.Font = new Font("Microsoft YaHei UI", 12F);
             lblPrecio.Location = new Point(320, 108);
             lblPrecio.Margin = new Padding(2, 0, 2, 0);
@@ -180,7 +181,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.MediumTurquoise;
+            label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(71, 228);
             label1.Margin = new Padding(2, 0, 2, 0);
@@ -193,7 +194,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.MediumTurquoise;
+            label2.BackColor = SystemColors.Control;
             label2.Font = new Font("Microsoft YaHei UI", 12F);
             label2.Location = new Point(601, 108);
             label2.Margin = new Padding(2, 0, 2, 0);
@@ -205,7 +206,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.MediumTurquoise;
+            label4.BackColor = SystemColors.Control;
             label4.Font = new Font("Microsoft YaHei UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(0, 0);
             label4.Margin = new Padding(2, 0, 2, 0);
@@ -217,7 +218,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.MediumTurquoise;
+            label5.BackColor = SystemColors.Control;
             label5.Font = new Font("Microsoft YaHei UI", 12F);
             label5.Location = new Point(601, 232);
             label5.Margin = new Padding(2, 0, 2, 0);
@@ -229,7 +230,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.BackColor = Color.MediumTurquoise;
+            label6.BackColor = SystemColors.Control;
             label6.Font = new Font("Microsoft YaHei UI", 12F);
             label6.Location = new Point(605, 290);
             label6.Margin = new Padding(2, 0, 2, 0);
@@ -241,7 +242,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.MediumTurquoise;
+            label7.BackColor = SystemColors.Control;
             label7.Font = new Font("Microsoft YaHei UI", 12F);
             label7.Location = new Point(742, 290);
             label7.Margin = new Padding(2, 0, 2, 0);
@@ -280,8 +281,9 @@
             // 
             // btnLimpiarCampos
             // 
-            btnLimpiarCampos.BackColor = Color.CornflowerBlue;
+            btnLimpiarCampos.BackColor = SystemColors.ActiveCaption;
             btnLimpiarCampos.FlatAppearance.BorderColor = Color.LightCoral;
+            btnLimpiarCampos.FlatAppearance.BorderSize = 0;
             btnLimpiarCampos.FlatStyle = FlatStyle.Flat;
             btnLimpiarCampos.ForeColor = SystemColors.ActiveCaptionText;
             btnLimpiarCampos.Location = new Point(1187, 195);
@@ -335,7 +337,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.MediumTurquoise;
+            label8.BackColor = SystemColors.Control;
             label8.Font = new Font("Microsoft YaHei UI", 12F);
             label8.Location = new Point(277, 147);
             label8.Margin = new Padding(2, 0, 2, 0);
@@ -347,7 +349,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.BackColor = Color.MediumTurquoise;
+            label9.BackColor = SystemColors.Control;
             label9.Font = new Font("Microsoft YaHei UI", 12F);
             label9.Location = new Point(420, 149);
             label9.Margin = new Padding(2, 0, 2, 0);
@@ -369,7 +371,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MediumTurquoise;
+            BackColor = SystemColors.Control;
             Controls.Add(cmbTipoHabitacion);
             Controls.Add(label9);
             Controls.Add(label8);
