@@ -41,11 +41,11 @@
             panelMenu_SidePanel = new Panel();
             btnMenu_Salir = new Button();
             lblMenu_Copyright = new Label();
-            panelMenu_ReservacionUC = new UserControls.ReservacionUC();
             panelMenu_CheckInUC = new UserControls.CheckInUC();
             panelMenu_ReservarUC = new UserControls.ReservarUC();
             panelMenu_InicioUC = new UserControls.InicioUC();
             panelMenu_CheckOutUC = new UserControls.CheckOutUC();
+            panelMenu_ReservacionUC = new UserControls.ReservacionUC();
             panelLogin.SuspendLayout();
             panelMenu_Opciones.SuspendLayout();
             SuspendLayout();
@@ -185,7 +185,7 @@
             btnMenu_Salir.Font = new Font("Microsoft YaHei UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMenu_Salir.Location = new Point(1, 829);
             btnMenu_Salir.Name = "btnMenu_Salir";
-            btnMenu_Salir.Size = new Size(343, 88);
+            btnMenu_Salir.Size = new Size(309, 88);
             btnMenu_Salir.TabIndex = 5;
             btnMenu_Salir.Text = "CERRAR SESIÓN";
             btnMenu_Salir.UseVisualStyleBackColor = false;
@@ -199,14 +199,6 @@
             lblMenu_Copyright.Size = new Size(364, 20);
             lblMenu_Copyright.TabIndex = 4;
             lblMenu_Copyright.Text = "TM © 2024 - Hotel Suite Savage - All Rights Reserved";
-            // 
-            // panelMenu_ReservacionUC
-            // 
-            panelMenu_ReservacionUC.BackColor = Color.MediumTurquoise;
-            panelMenu_ReservacionUC.Location = new Point(390, 222);
-            panelMenu_ReservacionUC.Name = "panelMenu_ReservacionUC";
-            panelMenu_ReservacionUC.Size = new Size(1448, 804);
-            panelMenu_ReservacionUC.TabIndex = 5;
             // 
             // panelMenu_CheckInUC
             // 
@@ -234,19 +226,27 @@
             // 
             panelMenu_CheckOutUC.Location = new Point(390, 222);
             panelMenu_CheckOutUC.Name = "panelMenu_CheckOutUC";
-            panelMenu_CheckOutUC.Size = new Size(1810, 1005);
+            panelMenu_CheckOutUC.Size = new Size(1448, 804);
             panelMenu_CheckOutUC.TabIndex = 9;
+            // 
+            // panelMenu_ReservacionUC
+            // 
+            panelMenu_ReservacionUC.BackColor = SystemColors.Control;
+            panelMenu_ReservacionUC.Location = new Point(390, 222);
+            panelMenu_ReservacionUC.Name = "panelMenu_ReservacionUC";
+            panelMenu_ReservacionUC.Size = new Size(1448, 804);
+            panelMenu_ReservacionUC.TabIndex = 10;
             // 
             // FrmMenuNavegacion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(panelMenu_ReservacionUC);
             Controls.Add(panelMenu_CheckOutUC);
             Controls.Add(panelMenu_InicioUC);
             Controls.Add(panelMenu_ReservarUC);
             Controls.Add(panelMenu_CheckInUC);
-            Controls.Add(panelMenu_ReservacionUC);
             Controls.Add(lblMenu_Copyright);
             Controls.Add(panelMenu_Opciones);
             Controls.Add(panelLogin);
@@ -278,11 +278,11 @@
         public Label lblMenu_Bienvenido;
         public Button btnMenu_Reservar;
         public Button btnMenu_CheckIn;
-        public UserControls.ReservacionUC panelMenu_ReservacionUC;
         public UserControls.ReservarUC panelMenu_ReservarUC;
         public UserControls.CheckInUC panelMenu_CheckInUC;
         public UserControls.InicioUC panelMenu_InicioUC;
         public Button btnMenu_CheckOut;
         public UserControls.CheckOutUC panelMenu_CheckOutUC;
+        public UserControls.ReservacionUC panelMenu_ReservacionUC;
     }
 }
