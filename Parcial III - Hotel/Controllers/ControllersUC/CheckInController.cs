@@ -1,4 +1,5 @@
 ﻿using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
+using Parcial_III___Hotel.Views;
 using Parcial_III___Hotel.Views.UserControls;
 
 namespace Parcial_III___Hotel.Controllers.ControllersUC
@@ -33,6 +34,19 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
 
         private void btnCheckInUC_ConfirmarCheckIn_Click (object? sender, EventArgs e)
         {
+
+            foreach (DataGridViewRow row in _checkInUC.dtgvCheckInUC_Lista.Rows)
+            {
+                string? status = row.Cells["Estado_Checks"].Value?.ToString();
+                if (status == "En Check In")
+                {
+                    FrmPayWall frmPayWall = new FrmPayWall();
+                    MessageBox.Show("Pago Requerido Antes de Check IN");
+                    frmPayWall.ShowDialog();
+                }
+
+            }
+            _checkInUC.dtgvCheckInUC_Lista.Invalidate();
 
             CheckInDAO.UpdateCheckStatus(_checkInUC.dtgvCheckInUC_Selected);
             _checkInUC.dtgvCheckInUC_Selected.Rows.Clear();
