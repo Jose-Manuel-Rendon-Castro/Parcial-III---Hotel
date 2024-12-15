@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
-using Parcial_III___Hotel.DAO;
-using Parcial_III___Hotel.Exceptions;
-using Parcial_III___Hotel.Models;
-using Parcial_III___Hotel.Views;
+using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
 using Parcial_III___Hotel.Views.UserControls;
-using System.Data;
-using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Parcial_III___Hotel.Controllers
 {
@@ -25,27 +19,7 @@ namespace Parcial_III___Hotel.Controllers
 
         private void btnReservarUC_MostrarHabitaciones_Click(object? sender, EventArgs e)
         {
-            string constring = "Server=localhost;Database=Suitesavage;Uid=root;Pwd=23040273";
-            MySqlConnection conDataBase = new MySqlConnection(constring);
-            MySqlCommand cmdDataBase = new MySqlCommand("select numhabitacion, tipo_habitacion, tipo_vista, precio, capacidad from suitesavage.habitaciones where Disponibilidad = 'disponible';", conDataBase);
-
-            try
-            {
-                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter();
-                sqlDataAdapter.SelectCommand = cmdDataBase;
-                DataTable dbDataSet = new DataTable();
-                sqlDataAdapter.Fill(dbDataSet);
-                BindingSource bSource = new BindingSource();
-
-                bSource.DataSource = dbDataSet;
-                _reservarUC.dtgvReservarUC_Habitaciones.DataSource = bSource;
-                sqlDataAdapter.Update(dbDataSet);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+            ReservarDAO.MostrarHabitacionesDisponibles(_reservarUC.dtgvReservarUC_Habitaciones);
         }
 
         private bool ValidateForm()
