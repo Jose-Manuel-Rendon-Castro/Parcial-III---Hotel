@@ -19,7 +19,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
             foreach (DataGridViewRow row in _checkInUC.dtgvCheckInUC_Lista.Rows)
             {
                 string? status = row.Cells["Estado_Checks"].Value?.ToString();
-                if (status == "Pendiente")
+                if (status == "En Check In")
                 {
                     row.Cells["Estado_Checks"].Style.ForeColor = Color.Red;
                 }
