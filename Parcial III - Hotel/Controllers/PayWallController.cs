@@ -11,6 +11,7 @@ namespace Parcial_III___Hotel.Controllers
         {
             _frmPayWall = frmPayWall;
             _frmPayWall.btnPayWall_Pagar.Click += BtnPayWall_Pagar_Click;
+            _frmPayWall.cmboxPayWall_TipoPago.SelectedIndexChanged += cmboxPayWall_TipoPago_SelectedIndexChanged;
         }
 
         public void MostrarPago(decimal idCheck)
@@ -20,16 +21,19 @@ namespace Parcial_III___Hotel.Controllers
             _frmPayWall.ShowDialog();
         }
 
+        private void cmboxPayWall_TipoPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Tarjeta")
+            {
+                _frmPayWall.lblPayWall_NumTarjeta.Visible = true;
+            }else
+            {
+                _frmPayWall.lblPayWall_NumTarjeta.Visible = false;
+            }
+        }
+
         private void BtnPayWall_Pagar_Click(object? sender, EventArgs e)
         {
-            if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Efectivo")
-            {
-
-            }
-            else
-            {
-
-            }
             _frmPayWall.Close();
         }
     }
