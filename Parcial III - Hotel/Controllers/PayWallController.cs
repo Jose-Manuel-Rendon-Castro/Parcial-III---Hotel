@@ -1,6 +1,7 @@
 ﻿using Parcial_III___Hotel.DataAccessObject;
 using Parcial_III___Hotel.Views;
 using Parcial_III___Hotel.Views.UserControls;
+using System.Windows.Forms;
 
 namespace Parcial_III___Hotel.Controllers
 {
@@ -26,12 +27,20 @@ namespace Parcial_III___Hotel.Controllers
             if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Tarjeta")
             {
                 _frmPayWall.lblPayWall_InfoTarjeta.Visible = true;
+                _frmPayWall.lblPayWall_NumT.Visible = true;
+                _frmPayWall.lblPayWall_FechaVCVV.Visible = true;
                 _frmPayWall.msktxtboxPayWall_NumTarjeta.Visible = true;
+                _frmPayWall.msktxtboxPayWall_FechaV.Visible = true;
+                _frmPayWall.msktxtboxPayWall_CVV.Visible = true;
             }
             else
             {
                 _frmPayWall.lblPayWall_InfoTarjeta.Visible = false;
+                _frmPayWall.lblPayWall_NumT.Visible = false;
+                _frmPayWall.lblPayWall_FechaVCVV.Visible = false;
                 _frmPayWall.msktxtboxPayWall_NumTarjeta.Visible = false;
+                _frmPayWall.msktxtboxPayWall_FechaV.Visible = false;
+                _frmPayWall.msktxtboxPayWall_CVV.Visible = false;
             }
         }
 
