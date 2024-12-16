@@ -31,16 +31,17 @@
             btnPayWall_Pagar = new Button();
             lblPayWall_InfoPago = new Label();
             lblPayWall_CantidadPagar = new Label();
+            cmboxPayWall_TipoPago = new ComboBox();
             SuspendLayout();
             // 
             // btnPayWall_Pagar
             // 
             btnPayWall_Pagar.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPayWall_Pagar.Location = new Point(345, 365);
+            btnPayWall_Pagar.Location = new Point(237, 365);
             btnPayWall_Pagar.Name = "btnPayWall_Pagar";
-            btnPayWall_Pagar.Size = new Size(103, 38);
+            btnPayWall_Pagar.Size = new Size(211, 38);
             btnPayWall_Pagar.TabIndex = 0;
-            btnPayWall_Pagar.Text = "Pagar";
+            btnPayWall_Pagar.Text = "Pagar y Confirmar";
             btnPayWall_Pagar.UseVisualStyleBackColor = true;
             // 
             // lblPayWall_InfoPago
@@ -62,11 +63,22 @@
             lblPayWall_CantidadPagar.Size = new Size(0, 30);
             lblPayWall_CantidadPagar.TabIndex = 2;
             // 
+            // cmboxPayWall_TipoPago
+            // 
+            cmboxPayWall_TipoPago.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmboxPayWall_TipoPago.FormattingEnabled = true;
+            cmboxPayWall_TipoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
+            cmboxPayWall_TipoPago.Location = new Point(24, 86);
+            cmboxPayWall_TipoPago.Name = "cmboxPayWall_TipoPago";
+            cmboxPayWall_TipoPago.Size = new Size(121, 23);
+            cmboxPayWall_TipoPago.TabIndex = 3;
+            // 
             // FrmPayWall
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmboxPayWall_TipoPago);
             Controls.Add(lblPayWall_CantidadPagar);
             Controls.Add(lblPayWall_InfoPago);
             Controls.Add(btnPayWall_Pagar);
@@ -81,5 +93,6 @@
         public Button btnPayWall_Pagar;
         public Label lblPayWall_InfoPago;
         public Label lblPayWall_CantidadPagar;
+        public ComboBox cmboxPayWall_TipoPago;
     }
 }

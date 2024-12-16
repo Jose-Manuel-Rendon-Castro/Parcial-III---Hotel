@@ -46,14 +46,12 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                     MessageBox.Show("Pago Requerido Antes de Check In");
                     decimal Id_Check = Convert.ToDecimal(row.Cells["ID_Checks"].Value);
                     _mediadorPayWall.NotificarPagoRequerido(Id_Check);
-                    FrmPayWall frmPayWall = new FrmPayWall();
-                    frmPayWall.ShowDialog();
                 }
             }
 
-
             CheckInDAO.UpdateCheckStatus(_checkInUC.dtgvCheckInUC_Selected);
             _checkInUC.dtgvCheckInUC_Selected.Rows.Clear();
+
         }
 
         public void Load (object? sender, EventArgs e)
