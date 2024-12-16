@@ -1,4 +1,5 @@
-﻿using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
+﻿using Parcial_III___Hotel.DataAccessObject;
+using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
 using Parcial_III___Hotel.Views;
 using Parcial_III___Hotel.Views.UserControls;
 
@@ -7,12 +8,14 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
     public class CheckInController
     {
         private CheckInUC _checkInUC;
-        public CheckInController(CheckInUC checkInUC)
+        private MediadorPayWall _mediadorPayWall;
+        public CheckInController(CheckInUC checkInUC, MediadorPayWall mediadorPayWall)
         {
             _checkInUC = checkInUC;
             _checkInUC.Load += Load;
             _checkInUC.btnCheckInUC_ConfirmarCheckIn.Click += btnCheckInUC_ConfirmarCheckIn_Click;
             _checkInUC.dtgvCheckInUC_Lista.CellContentClick += dtgvCheckInUC_Lista_CellContentClick;
+            _mediadorPayWall = mediadorPayWall;
         } 
 
         private void updateTable()
@@ -40,13 +43,14 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                 string? status = row.Cells["Estado_Checks"].Value?.ToString();
                 if (status == "En Check In")
                 {
+                    decimal Id_Check = Convert.ToDecimal(row.Cells["ID_Checks"].Value);
+                    _mediadorPayWall.NotificarPagoRequerido(Id_Check);
+                    MessageBox.Show("Pago Requerido Antes de Check In");
                     FrmPayWall frmPayWall = new FrmPayWall();
-                    MessageBox.Show("Pago Requerido Antes de Check IN");
                     frmPayWall.ShowDialog();
                 }
-
             }
-            _checkInUC.dtgvCheckInUC_Lista.Invalidate();
+
 
             CheckInDAO.UpdateCheckStatus(_checkInUC.dtgvCheckInUC_Selected);
             _checkInUC.dtgvCheckInUC_Selected.Rows.Clear();
