@@ -48,10 +48,8 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                     _mediadorPayWall.NotificarPagoRequerido(Id_Check);
                 }
             }
-
             CheckInDAO.UpdateCheckStatus(_checkInUC.dtgvCheckInUC_Selected);
             _checkInUC.dtgvCheckInUC_Selected.Rows.Clear();
-
         }
 
         public void Load (object? sender, EventArgs e)

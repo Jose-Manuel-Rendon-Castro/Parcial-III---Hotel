@@ -31,30 +31,5 @@ namespace Parcial_III___Hotel.DataAccessObject
                 }
             }
         }
-        /*public static void GenerarPago()
-        {
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                conn.Open();
-
-                // Insert guest information
-                string guestQuery = @"INSERT INTO Huespedes (Nombre, NumCelular, Correo, Tipo_Membresia, Estado_Membresia) 
-                                  VALUES (@Nombre, @NumCelular, @Correo, @Tipo_Membresia, @Estado_Membresia)";
-                long guestId;
-                using (MySqlCommand cmd = new MySqlCommand(guestQuery, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Nombre", guestName);
-                    cmd.Parameters.AddWithValue("@NumCelular", phone);
-                    cmd.Parameters.AddWithValue("@Correo", guestEmail);
-                    cmd.Parameters.AddWithValue("@Tipo_Membresia", membershipType);
-                    cmd.Parameters.AddWithValue("@Estado_Membresia", 1);
-
-                    cmd.ExecuteNonQuery();
-
-                    // Retrieve the auto-generated guest_id
-                    guestId = cmd.LastInsertedId; // Retrieves the LAST_INSERT_ID()
-                }
-            }
-        }*/
     }
 }
