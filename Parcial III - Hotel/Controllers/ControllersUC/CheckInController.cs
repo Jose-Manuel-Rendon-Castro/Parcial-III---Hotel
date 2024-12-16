@@ -43,9 +43,9 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                 string? status = row.Cells["Estado_Checks"].Value?.ToString();
                 if (status == "En Check In")
                 {
+                    MessageBox.Show("Pago Requerido Antes de Check In");
                     decimal Id_Check = Convert.ToDecimal(row.Cells["ID_Checks"].Value);
                     _mediadorPayWall.NotificarPagoRequerido(Id_Check);
-                    MessageBox.Show("Pago Requerido Antes de Check In");
                     FrmPayWall frmPayWall = new FrmPayWall();
                     frmPayWall.ShowDialog();
                 }
