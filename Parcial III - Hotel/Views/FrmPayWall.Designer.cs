@@ -32,7 +32,9 @@
             lblPayWall_InfoPago = new Label();
             lblPayWall_CantidadPagar = new Label();
             cmboxPayWall_TipoPago = new ComboBox();
-            lblPayWall_NumTarjeta = new Label();
+            lblPayWall_InfoTarjeta = new Label();
+            label1 = new Label();
+            msktxtboxPayWall_NumTarjeta = new MaskedTextBox();
             SuspendLayout();
             // 
             // btnPayWall_Pagar
@@ -69,27 +71,49 @@
             cmboxPayWall_TipoPago.DropDownStyle = ComboBoxStyle.DropDownList;
             cmboxPayWall_TipoPago.FormattingEnabled = true;
             cmboxPayWall_TipoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
-            cmboxPayWall_TipoPago.Location = new Point(24, 86);
+            cmboxPayWall_TipoPago.Location = new Point(24, 107);
             cmboxPayWall_TipoPago.Name = "cmboxPayWall_TipoPago";
-            cmboxPayWall_TipoPago.Size = new Size(121, 23);
+            cmboxPayWall_TipoPago.Size = new Size(137, 23);
             cmboxPayWall_TipoPago.TabIndex = 3;
             // 
-            // lblPayWall_NumTarjeta
+            // lblPayWall_InfoTarjeta
             // 
-            lblPayWall_NumTarjeta.AutoSize = true;
-            lblPayWall_NumTarjeta.Location = new Point(24, 148);
-            lblPayWall_NumTarjeta.Name = "lblPayWall_NumTarjeta";
-            lblPayWall_NumTarjeta.Size = new Size(103, 15);
-            lblPayWall_NumTarjeta.TabIndex = 4;
-            lblPayWall_NumTarjeta.Text = "TEXTO DE PRUEBA";
-            lblPayWall_NumTarjeta.Visible = false;
+            lblPayWall_InfoTarjeta.AutoSize = true;
+            lblPayWall_InfoTarjeta.Font = new Font("Cambria", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPayWall_InfoTarjeta.Location = new Point(24, 158);
+            lblPayWall_InfoTarjeta.Name = "lblPayWall_InfoTarjeta";
+            lblPayWall_InfoTarjeta.Size = new Size(237, 25);
+            lblPayWall_InfoTarjeta.TabIndex = 4;
+            lblPayWall_InfoTarjeta.Text = "Información de la Tarjeta";
+            lblPayWall_InfoTarjeta.Visible = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(24, 74);
+            label1.Name = "label1";
+            label1.Size = new Size(167, 30);
+            label1.TabIndex = 5;
+            label1.Text = "Método de Pago";
+            // 
+            // msktxtboxPayWall_NumTarjeta
+            // 
+            msktxtboxPayWall_NumTarjeta.Location = new Point(24, 196);
+            msktxtboxPayWall_NumTarjeta.Mask = "0000-0000-0000-0000";
+            msktxtboxPayWall_NumTarjeta.Name = "msktxtboxPayWall_NumTarjeta";
+            msktxtboxPayWall_NumTarjeta.Size = new Size(137, 23);
+            msktxtboxPayWall_NumTarjeta.TabIndex = 7;
+            msktxtboxPayWall_NumTarjeta.Visible = false;
             // 
             // FrmPayWall
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblPayWall_NumTarjeta);
+            Controls.Add(msktxtboxPayWall_NumTarjeta);
+            Controls.Add(label1);
+            Controls.Add(lblPayWall_InfoTarjeta);
             Controls.Add(cmboxPayWall_TipoPago);
             Controls.Add(lblPayWall_CantidadPagar);
             Controls.Add(lblPayWall_InfoPago);
@@ -106,6 +130,8 @@
         public Label lblPayWall_InfoPago;
         public Label lblPayWall_CantidadPagar;
         public ComboBox cmboxPayWall_TipoPago;
-        public Label lblPayWall_NumTarjeta;
+        public Label lblPayWall_InfoTarjeta;
+        private Label label1;
+        public MaskedTextBox msktxtboxPayWall_NumTarjeta;
     }
 }

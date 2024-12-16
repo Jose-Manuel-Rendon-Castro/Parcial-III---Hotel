@@ -25,15 +25,19 @@ namespace Parcial_III___Hotel.Controllers
         {
             if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Tarjeta")
             {
-                _frmPayWall.lblPayWall_NumTarjeta.Visible = true;
-            }else
+                _frmPayWall.lblPayWall_InfoTarjeta.Visible = true;
+                _frmPayWall.msktxtboxPayWall_NumTarjeta.Visible = true;
+            }
+            else
             {
-                _frmPayWall.lblPayWall_NumTarjeta.Visible = false;
+                _frmPayWall.lblPayWall_InfoTarjeta.Visible = false;
+                _frmPayWall.msktxtboxPayWall_NumTarjeta.Visible = false;
             }
         }
 
         private void BtnPayWall_Pagar_Click(object? sender, EventArgs e)
         {
+            MessageBox.Show(_frmPayWall.msktxtboxPayWall_NumTarjeta.Text);
             _frmPayWall.Close();
         }
     }
