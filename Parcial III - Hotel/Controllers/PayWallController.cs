@@ -9,7 +9,6 @@ namespace Parcial_III___Hotel.Controllers
     {
         private FrmPayWall _frmPayWall;
         private decimal aPagar;
-        private bool pagoRealizado = false;
 
         public PayWallController(FrmPayWall frmPayWall)
         {
@@ -20,28 +19,13 @@ namespace Parcial_III___Hotel.Controllers
         }
         private void BtnPayWall_Pagar_Click(object? sender, EventArgs e)
         {
-            if (pagoRealizado) return;
-            pagoRealizado = true;
 
-            if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Efectivo")
-            {
-                if (String.IsNullOrEmpty(_frmPayWall.lblPayWall_Vuelto.Text))
-                {
-                    MessageBox.Show("Presione la tecla 'ENTER' en el pago ingresado para determinar el cambio de ser necesario.");
-                    pagoRealizado = false;
-                }
-                else if (!String.IsNullOrEmpty(_frmPayWall.lblPayWall_Vuelto.Text))
-                {
-                    MessageBox.Show("Check In Registrado con Éxito.");
-                    _frmPayWall.Close();
-                }
-            }
         }
 
         public void MostrarPago(decimal idCheck)
         {
             aPagar = PayWallDAO.CantidadPagar(idCheck);
-            _frmPayWall.lblPayWall_CantidadPagar.Text = $"${aPagar}";
+            _frmPayWall.lblPayWall_CantidadPagar.Text = $"$ {aPagar}";
             _frmPayWall.ShowDialog();
         }
 
@@ -53,9 +37,11 @@ namespace Parcial_III___Hotel.Controllers
                 _frmPayWall.lblPayWall_NumT.Visible = true;
                 _frmPayWall.lblPayWall_FechaV.Visible = true;
                 _frmPayWall.lblPayWall_CVV.Visible = true;
+                _frmPayWall.lblPayWall_NombreTitular.Visible = true;
                 _frmPayWall.msktxtboxPayWall_NumTarjeta.Visible = true;
                 _frmPayWall.msktxtboxPayWall_FechaV.Visible = true;
                 _frmPayWall.msktxtboxPayWall_CVV.Visible = true;
+                _frmPayWall.msktxtboxPayWall_NombreTitular.Visible = true;
 
                 _frmPayWall.lblPayWall_Pago.Visible = false;
                 _frmPayWall.lblPayWall_Cambio.Visible = false;
@@ -69,15 +55,19 @@ namespace Parcial_III___Hotel.Controllers
                 _frmPayWall.msktxtboxPayWall_Pago.Visible = true;
                 _frmPayWall.lblPayWall_Vuelto.Visible = true;
 
+                _frmPayWall.msktxtboxPayWall_Pago.Text = "";
+                _frmPayWall.lblPayWall_Vuelto.Text = "Presione le tecla 'Enter' en el \r\npago ingresado para \r\nobtener el cambio.";
                 _frmPayWall.lblPayWall_InfoTarjeta.Visible = false;
                 _frmPayWall.lblPayWall_NumT.Visible = false;
                 _frmPayWall.lblPayWall_FechaV.Visible = false;
                 _frmPayWall.lblPayWall_CVV.Visible = false;
+                _frmPayWall.lblPayWall_NombreTitular.Visible = false;
                 _frmPayWall.msktxtboxPayWall_NumTarjeta.Visible = false;
                 _frmPayWall.msktxtboxPayWall_FechaV.Visible = false;
                 _frmPayWall.msktxtboxPayWall_CVV.Visible = false;
-            }
+                _frmPayWall.msktxtboxPayWall_NombreTitular.Visible = false;
 
+            }
         }
 
         private void msktxtboxPayWall_Pago_KeyDown(object sender, KeyEventArgs e)
@@ -85,9 +75,6 @@ namespace Parcial_III___Hotel.Controllers
             // Verificar si la tecla presionada es "Enter"
             if (e.KeyCode == Keys.Enter)
             {
-                _frmPayWall.lblPayWall_Vuelto.Text = "";  // Limpiar el mensaje de vuelto
-
-                // Llamar a la función CalcularCambio pasando el valor de aPagar
                 CalcularCambio(aPagar);
 
                 // Marcar el evento como manejado para evitar que cause otras acciones

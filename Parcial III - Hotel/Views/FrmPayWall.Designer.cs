@@ -33,7 +33,7 @@
             lblPayWall_CantidadPagar = new Label();
             cmboxPayWall_TipoPago = new ComboBox();
             lblPayWall_InfoTarjeta = new Label();
-            label1 = new Label();
+            lblPayWall_MetodoPago = new Label();
             msktxtboxPayWall_NumTarjeta = new MaskedTextBox();
             msktxtboxPayWall_FechaV = new MaskedTextBox();
             lblPayWall_NumT = new Label();
@@ -44,17 +44,21 @@
             lblPayWall_Pago = new Label();
             lblPayWall_Cambio = new Label();
             lblPayWall_Vuelto = new Label();
+            lblPayWall_NombreTitular = new Label();
+            msktxtboxPayWall_NombreTitular = new MaskedTextBox();
             SuspendLayout();
             // 
             // btnPayWall_Pagar
             // 
+            btnPayWall_Pagar.BackColor = SystemColors.ControlLightLight;
+            btnPayWall_Pagar.Enabled = false;
             btnPayWall_Pagar.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPayWall_Pagar.Location = new Point(285, 373);
+            btnPayWall_Pagar.Location = new Point(345, 390);
             btnPayWall_Pagar.Name = "btnPayWall_Pagar";
-            btnPayWall_Pagar.Size = new Size(211, 38);
+            btnPayWall_Pagar.Size = new Size(197, 38);
             btnPayWall_Pagar.TabIndex = 0;
             btnPayWall_Pagar.Text = "Pagar y Confirmar";
-            btnPayWall_Pagar.UseVisualStyleBackColor = true;
+            btnPayWall_Pagar.UseVisualStyleBackColor = false;
             // 
             // lblPayWall_InfoPago
             // 
@@ -97,20 +101,20 @@
             lblPayWall_InfoTarjeta.Text = "Información de la Tarjeta";
             lblPayWall_InfoTarjeta.Visible = false;
             // 
-            // label1
+            // lblPayWall_MetodoPago
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(30, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(167, 30);
-            label1.TabIndex = 5;
-            label1.Text = "Método de Pago";
+            lblPayWall_MetodoPago.AutoSize = true;
+            lblPayWall_MetodoPago.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPayWall_MetodoPago.Location = new Point(30, 18);
+            lblPayWall_MetodoPago.Name = "lblPayWall_MetodoPago";
+            lblPayWall_MetodoPago.Size = new Size(167, 30);
+            lblPayWall_MetodoPago.TabIndex = 5;
+            lblPayWall_MetodoPago.Text = "Método de Pago";
             // 
             // msktxtboxPayWall_NumTarjeta
             // 
             msktxtboxPayWall_NumTarjeta.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            msktxtboxPayWall_NumTarjeta.Location = new Point(432, 133);
+            msktxtboxPayWall_NumTarjeta.Location = new Point(464, 129);
             msktxtboxPayWall_NumTarjeta.Mask = "0000-0000-0000-0000";
             msktxtboxPayWall_NumTarjeta.Name = "msktxtboxPayWall_NumTarjeta";
             msktxtboxPayWall_NumTarjeta.PromptChar = 'X';
@@ -122,7 +126,7 @@
             // msktxtboxPayWall_FechaV
             // 
             msktxtboxPayWall_FechaV.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            msktxtboxPayWall_FechaV.Location = new Point(432, 179);
+            msktxtboxPayWall_FechaV.Location = new Point(464, 202);
             msktxtboxPayWall_FechaV.Mask = "00/00";
             msktxtboxPayWall_FechaV.Name = "msktxtboxPayWall_FechaV";
             msktxtboxPayWall_FechaV.PromptChar = 'X';
@@ -133,10 +137,10 @@
             // lblPayWall_NumT
             // 
             lblPayWall_NumT.AutoSize = true;
-            lblPayWall_NumT.Font = new Font("Corbel", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPayWall_NumT.Location = new Point(432, 97);
+            lblPayWall_NumT.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPayWall_NumT.Location = new Point(464, 93);
             lblPayWall_NumT.Name = "lblPayWall_NumT";
-            lblPayWall_NumT.Size = new Size(157, 33);
+            lblPayWall_NumT.Size = new Size(123, 26);
             lblPayWall_NumT.TabIndex = 9;
             lblPayWall_NumT.Text = "Num. Tarjeta";
             lblPayWall_NumT.Visible = false;
@@ -145,17 +149,17 @@
             // 
             lblPayWall_FechaV.AutoSize = true;
             lblPayWall_FechaV.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPayWall_FechaV.Location = new Point(422, 253);
+            lblPayWall_FechaV.Location = new Point(464, 173);
             lblPayWall_FechaV.Name = "lblPayWall_FechaV";
-            lblPayWall_FechaV.Size = new Size(248, 26);
+            lblPayWall_FechaV.Size = new Size(78, 26);
             lblPayWall_FechaV.TabIndex = 10;
-            lblPayWall_FechaV.Text = "Fecha Vencimiento  MM/AA";
+            lblPayWall_FechaV.Text = "MM/AA";
             lblPayWall_FechaV.Visible = false;
             // 
             // msktxtboxPayWall_CVV
             // 
             msktxtboxPayWall_CVV.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            msktxtboxPayWall_CVV.Location = new Point(500, 179);
+            msktxtboxPayWall_CVV.Location = new Point(587, 202);
             msktxtboxPayWall_CVV.Mask = "000/0";
             msktxtboxPayWall_CVV.Name = "msktxtboxPayWall_CVV";
             msktxtboxPayWall_CVV.PromptChar = 'X';
@@ -166,8 +170,9 @@
             // lblPayWall_CVV
             // 
             lblPayWall_CVV.AutoSize = true;
+            lblPayWall_CVV.BackColor = Color.Transparent;
             lblPayWall_CVV.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPayWall_CVV.Location = new Point(559, 182);
+            lblPayWall_CVV.Location = new Point(587, 173);
             lblPayWall_CVV.Name = "lblPayWall_CVV";
             lblPayWall_CVV.Size = new Size(50, 26);
             lblPayWall_CVV.TabIndex = 12;
@@ -177,7 +182,7 @@
             // msktxtboxPayWall_Pago
             // 
             msktxtboxPayWall_Pago.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            msktxtboxPayWall_Pago.Location = new Point(30, 263);
+            msktxtboxPayWall_Pago.Location = new Point(30, 235);
             msktxtboxPayWall_Pago.Mask = "00000";
             msktxtboxPayWall_Pago.Name = "msktxtboxPayWall_Pago";
             msktxtboxPayWall_Pago.Size = new Size(94, 29);
@@ -188,7 +193,7 @@
             // 
             lblPayWall_Pago.AutoSize = true;
             lblPayWall_Pago.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPayWall_Pago.Location = new Point(30, 222);
+            lblPayWall_Pago.Location = new Point(30, 202);
             lblPayWall_Pago.Name = "lblPayWall_Pago";
             lblPayWall_Pago.Size = new Size(103, 30);
             lblPayWall_Pago.TabIndex = 14;
@@ -199,7 +204,7 @@
             // 
             lblPayWall_Cambio.AutoSize = true;
             lblPayWall_Cambio.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPayWall_Cambio.Location = new Point(30, 327);
+            lblPayWall_Cambio.Location = new Point(30, 301);
             lblPayWall_Cambio.Name = "lblPayWall_Cambio";
             lblPayWall_Cambio.Size = new Size(193, 30);
             lblPayWall_Cambio.TabIndex = 16;
@@ -210,11 +215,34 @@
             // 
             lblPayWall_Vuelto.AutoSize = true;
             lblPayWall_Vuelto.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPayWall_Vuelto.Location = new Point(30, 373);
+            lblPayWall_Vuelto.Location = new Point(30, 349);
             lblPayWall_Vuelto.Name = "lblPayWall_Vuelto";
-            lblPayWall_Vuelto.Size = new Size(0, 21);
+            lblPayWall_Vuelto.Size = new Size(211, 63);
             lblPayWall_Vuelto.TabIndex = 17;
+            lblPayWall_Vuelto.Text = "Presione le tecla 'Enter' en el \r\npago ingresado para \r\nobtener el cambio.";
+            lblPayWall_Vuelto.TextAlign = ContentAlignment.TopCenter;
             lblPayWall_Vuelto.Visible = false;
+            // 
+            // lblPayWall_NombreTitular
+            // 
+            lblPayWall_NombreTitular.AutoSize = true;
+            lblPayWall_NombreTitular.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPayWall_NombreTitular.Location = new Point(464, 254);
+            lblPayWall_NombreTitular.Name = "lblPayWall_NombreTitular";
+            lblPayWall_NombreTitular.Size = new Size(279, 26);
+            lblPayWall_NombreTitular.TabIndex = 18;
+            lblPayWall_NombreTitular.Text = "Nombre del Titular de la Tarjeta";
+            lblPayWall_NombreTitular.Visible = false;
+            // 
+            // msktxtboxPayWall_NombreTitular
+            // 
+            msktxtboxPayWall_NombreTitular.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            msktxtboxPayWall_NombreTitular.Location = new Point(464, 283);
+            msktxtboxPayWall_NombreTitular.Mask = "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL";
+            msktxtboxPayWall_NombreTitular.Name = "msktxtboxPayWall_NombreTitular";
+            msktxtboxPayWall_NombreTitular.Size = new Size(302, 29);
+            msktxtboxPayWall_NombreTitular.TabIndex = 19;
+            msktxtboxPayWall_NombreTitular.Visible = false;
             // 
             // FrmPayWall
             // 
@@ -222,6 +250,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(msktxtboxPayWall_NombreTitular);
+            Controls.Add(lblPayWall_NombreTitular);
             Controls.Add(lblPayWall_Vuelto);
             Controls.Add(lblPayWall_Cambio);
             Controls.Add(lblPayWall_Pago);
@@ -232,7 +262,7 @@
             Controls.Add(lblPayWall_NumT);
             Controls.Add(msktxtboxPayWall_FechaV);
             Controls.Add(msktxtboxPayWall_NumTarjeta);
-            Controls.Add(label1);
+            Controls.Add(lblPayWall_MetodoPago);
             Controls.Add(lblPayWall_InfoTarjeta);
             Controls.Add(cmboxPayWall_TipoPago);
             Controls.Add(lblPayWall_CantidadPagar);
@@ -251,7 +281,7 @@
         public Label lblPayWall_CantidadPagar;
         public ComboBox cmboxPayWall_TipoPago;
         public Label lblPayWall_InfoTarjeta;
-        private Label label1;
+        private Label lblPayWall_MetodoPago;
         public MaskedTextBox msktxtboxPayWall_NumTarjeta;
         public MaskedTextBox msktxtboxPayWall_FechaV;
         public Label lblPayWall_NumT;
@@ -262,5 +292,8 @@
         public Label lblPayWall_Pago;
         public Label lblPayWall_Cambio;
         public Label lblPayWall_Vuelto;
+        public Label lblPayWall_NombreTitular;
+        public MaskedTextBox maskedTextBox1;
+        public MaskedTextBox msktxtboxPayWall_NombreTitular;
     }
 }
