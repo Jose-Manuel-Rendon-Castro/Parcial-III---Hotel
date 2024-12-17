@@ -9,13 +9,33 @@ namespace Parcial_III___Hotel.Controllers
     {
         private FrmPayWall _frmPayWall;
         private decimal aPagar;
+        private bool pagoRealizado = false;
 
         public PayWallController(FrmPayWall frmPayWall)
         {
             _frmPayWall = frmPayWall;
-            _frmPayWall.btnPayWall_Pagar.Click += BtnPayWall_Pagar_Click;
             _frmPayWall.cmboxPayWall_TipoPago.SelectedIndexChanged += cmboxPayWall_TipoPago_SelectedIndexChanged;
             _frmPayWall.msktxtboxPayWall_Pago.KeyDown += msktxtboxPayWall_Pago_KeyDown;
+            _frmPayWall.btnPayWall_Pagar.Click += BtnPayWall_Pagar_Click;
+        }
+        private void BtnPayWall_Pagar_Click(object? sender, EventArgs e)
+        {
+            if (pagoRealizado) return;
+            pagoRealizado = true;
+
+            if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Efectivo")
+            {
+                if (String.IsNullOrEmpty(_frmPayWall.lblPayWall_Vuelto.Text))
+                {
+                    MessageBox.Show("Presione la tecla 'ENTER' en el pago ingresado para determinar el cambio de ser necesario.");
+                    pagoRealizado = false;
+                }
+                else if (!String.IsNullOrEmpty(_frmPayWall.lblPayWall_Vuelto.Text))
+                {
+                    MessageBox.Show("Check In Registrado con Éxito.");
+                    _frmPayWall.Close();
+                }
+            }
         }
 
         public void MostrarPago(decimal idCheck)
@@ -101,11 +121,6 @@ namespace Parcial_III___Hotel.Controllers
             {
                 MessageBox.Show("Por favor, ingresa un monto válido.");
             }
-        }
-
-        private void BtnPayWall_Pagar_Click(object? sender, EventArgs e)
-        {
-            _frmPayWall.Close();
         }
     }
 }

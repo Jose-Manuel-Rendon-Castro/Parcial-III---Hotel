@@ -19,6 +19,5 @@ namespace Parcial_III___Hotel.Views
             InitializeComponent();
             _payWallController = new PayWallController(this);
         }
-
     }
 }
