@@ -1,4 +1,6 @@
-﻿using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
+﻿using Parcial_III___Hotel.DataAccessObject;
+using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
+using Parcial_III___Hotel.Views;
 using Parcial_III___Hotel.Views.UserControls;
 
 namespace Parcial_III___Hotel.Controllers.ControllersUC
@@ -6,12 +8,14 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
     public class CheckInController
     {
         private CheckInUC _checkInUC;
-        public CheckInController(CheckInUC checkInUC)
+        private MediadorPayWall _mediadorPayWall;
+        public CheckInController(CheckInUC checkInUC, MediadorPayWall mediadorPayWall)
         {
             _checkInUC = checkInUC;
             _checkInUC.Load += Load;
             _checkInUC.btnCheckInUC_ConfirmarCheckIn.Click += btnCheckInUC_ConfirmarCheckIn_Click;
             _checkInUC.dtgvCheckInUC_Lista.CellContentClick += dtgvCheckInUC_Lista_CellContentClick;
+            _mediadorPayWall = mediadorPayWall;
         } 
 
         private void updateTable()
@@ -19,7 +23,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
             foreach (DataGridViewRow row in _checkInUC.dtgvCheckInUC_Lista.Rows)
             {
                 string? status = row.Cells["Estado_Checks"].Value?.ToString();
-                if (status == "Pendiente")
+                if (status == "En Check In")
                 {
                     row.Cells["Estado_Checks"].Style.ForeColor = Color.Red;
                 }
@@ -33,6 +37,17 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
 
         private void btnCheckInUC_ConfirmarCheckIn_Click (object? sender, EventArgs e)
         {
+
+            foreach (DataGridViewRow row in _checkInUC.dtgvCheckInUC_Lista.Rows)
+            {
+                string? status = row.Cells["Estado_Checks"].Value?.ToString();
+                if (status == "En Check In")
+                {
+                    MessageBox.Show("Pago Requerido Antes de Check In");
+                    decimal Id_Check = Convert.ToDecimal(row.Cells["ID_Checks"].Value);
+                    _mediadorPayWall.NotificarPagoRequerido(Id_Check);
+                }
+            }
             CheckInDAO.UpdateCheckStatus(_checkInUC.dtgvCheckInUC_Selected);
             _checkInUC.dtgvCheckInUC_Selected.Rows.Clear();
         }
