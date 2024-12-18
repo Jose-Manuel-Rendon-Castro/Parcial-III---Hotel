@@ -1,8 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Tls;
 using Parcial_III___Hotel.DAO;
 using Parcial_III___Hotel.Models;
-using Parcial_III___Hotel.Views.UserControls;
 using System.Data;
 
 namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
@@ -37,6 +35,51 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
                 }
             }
             return Huespedes;
+        }
+        private static int obtenerIdHuesped(string nombre)
+        {
+            string selectQuery = "SELECT Huesped_Id FROM huespedes WHERE Nombre = @Nombre";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                using (MySqlCommand selectCommnad = new MySqlCommand(selectQuery, conn))
+                {
+                    selectCommnad.Parameters.AddWithValue("@Nombre", nombre);
+                    return Convert.ToInt32(selectCommnad.ExecuteScalar());
+                }
+            }
+        }
+
+        public static void ReservarHabitacion(string nombre, DateTime fecha_Entrada, DateTime fecha_Salida, DataGridView dataGridView)
+        {
+            string checkQuery = "INSERT INTO Checks (Fecha_Entrada, Fecha_Salida, Huesped_Id, NumHabitacion, Estado_Checks) VALUES (@Fecha_Entrada, @Fecha_Salida, @Huesped_Id, @NumHabitacion, @Estado_Checks)";
+            string? roomType = dataGridView.SelectedRows[0].Cells["Tipo_Habitacion"].Value.ToString();
+            string? roomCapacity = dataGridView.SelectedRows[0].Cells["Capacidad"].Value.ToString();
+            string? roomNumber = dataGridView.SelectedRows[0].Cells["NumHabitacion"].Value.ToString();
+            int huespedId = obtenerIdHuesped(nombre);
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(checkQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Fecha_Entrada", fecha_Entrada);
+                        cmd.Parameters.AddWithValue("@Fecha_Salida", fecha_Salida);
+                        cmd.Parameters.AddWithValue("@Huesped_Id", huespedId);
+                        cmd.Parameters.AddWithValue("@NumHabitacion", roomNumber);
+                        cmd.Parameters.AddWithValue("@Estado_Checks", "Pendiente");
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Reservacion creada exitosamente!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public static void MostrarHabitacionesDisponibles(DataGridView dataGridView)
         {
