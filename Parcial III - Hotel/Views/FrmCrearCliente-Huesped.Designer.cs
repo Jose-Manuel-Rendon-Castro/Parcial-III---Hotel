@@ -144,6 +144,7 @@
             // combxCrearCliente_Membresia
             // 
             combxCrearCliente_Membresia.FormattingEnabled = true;
+            combxCrearCliente_Membresia.Items.AddRange(new object[] { "Membresía básica", "Membresía de lealtad", "Membresía corporativa", "Membresía por suscripción anual" });
             combxCrearCliente_Membresia.Location = new Point(372, 126);
             combxCrearCliente_Membresia.Name = "combxCrearCliente_Membresia";
             combxCrearCliente_Membresia.Size = new Size(242, 28);
