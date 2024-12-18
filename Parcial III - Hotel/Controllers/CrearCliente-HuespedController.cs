@@ -29,6 +29,7 @@ namespace Parcial_III___Hotel.Controllers
                     throw new EmptyFieldException(); 
                 }
                 if (Huesped.EsCorreo(_frmCrearCliente_Huesped.txtbCrearCliente_Correo.Text)) throw new NotEmailException();
+                if (_frmCrearCliente_Huesped.txtbCrearCliente_NumCelular.Text.Length != 10) throw new NotCelNumberException();
 
                 string nombreCompleto = _frmCrearCliente_Huesped.txtbCrearCliente_Nombre.Text.Trim() + " " + _frmCrearCliente_Huesped.txtbCrearCliente_Apellido.Text.Trim();
                 string numCelular = _frmCrearCliente_Huesped.txtbCrearCliente_NumCelular.Text.Trim();
@@ -43,6 +44,10 @@ namespace Parcial_III___Hotel.Controllers
                 MessageBox.Show(ex.Message);
             }
             catch (NotEmailException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (NotCelNumberException ex)
             {
                 MessageBox.Show(ex.Message);
             }
