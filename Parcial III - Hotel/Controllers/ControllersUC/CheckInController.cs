@@ -23,7 +23,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
             foreach (DataGridViewRow row in _checkInUC.dtgvCheckInUC_Lista.Rows)
             {
                 string? status = row.Cells["Estado_Checks"].Value?.ToString();
-                if (status == "En Check In")
+                if (status == "IN")
                 {
                     row.Cells["Estado_Checks"].Style.ForeColor = Color.Red;
                 }
@@ -79,7 +79,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                 //Obtener el estado de la fila seleccionada
                 string? status = _checkInUC.dtgvCheckInUC_Lista.Rows[e.RowIndex].Cells["Estado_Checks"].Value?.ToString();
 
-                if (status != "ACTIVO") {
+                if (status != "IN") {
                     _checkInUC.dtgvCheckInUC_Selected.Rows.Add(
                         _checkInUC.dtgvCheckInUC_Lista.Rows[e.RowIndex].Cells["ID_Checks"].Value?.ToString(),
                         _checkInUC.dtgvCheckInUC_Lista.Rows[e.RowIndex].Cells["Fecha_Entrada"].Value?.ToString(),

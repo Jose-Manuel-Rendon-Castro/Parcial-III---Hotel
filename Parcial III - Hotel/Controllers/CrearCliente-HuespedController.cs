@@ -28,7 +28,7 @@ namespace Parcial_III___Hotel.Controllers
                 {
                     throw new EmptyFieldException(); 
                 }
-                if (Huesped.EsCorreo(_frmCrearCliente_Huesped.txtbCrearCliente_Correo.Text)) throw new NotEmailException();
+                if (!Huesped.EsCorreo(_frmCrearCliente_Huesped.txtbCrearCliente_Correo.Text)) throw new NotEmailException();
                 if (_frmCrearCliente_Huesped.txtbCrearCliente_NumCelular.Text.Length != 10) throw new NotCelNumberException();
 
                 string nombreCompleto = _frmCrearCliente_Huesped.txtbCrearCliente_Nombre.Text.Trim() + " " + _frmCrearCliente_Huesped.txtbCrearCliente_Apellido.Text.Trim();
@@ -37,6 +37,7 @@ namespace Parcial_III___Hotel.Controllers
                 string membresia = _frmCrearCliente_Huesped.combxCrearCliente_Membresia.Text.Trim();
 
                 CrearCliente_HuespedDAO.CrearCliente_Huesped(nombreCompleto, numCelular, correo, membresia);
+                MessageBox.Show("Se ha creado el usuario con exito");
             }
 
             catch (EmptyFieldException ex)

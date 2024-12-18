@@ -70,7 +70,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                 //Obtener el estado de la fila seleccionada
                 string? status = _checkOutUC.dtgvCheckOutUC_Lista.Rows[e.RowIndex].Cells["Estado_Checks"].Value?.ToString();
 
-                if (status != "IN")
+                if (status != "OUT")
                 {
                     _checkOutUC.dtgvCheckOutUC_Selected.Rows.Add(
                         _checkOutUC.dtgvCheckOutUC_Lista.Rows[e.RowIndex].Cells["ID_Checks"].Value?.ToString(),
@@ -82,7 +82,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                 }
                 else
                 {
-                    MessageBox.Show("Habitación en uso");
+                    MessageBox.Show("Habitación desocupada");
                 }
             }
         }
