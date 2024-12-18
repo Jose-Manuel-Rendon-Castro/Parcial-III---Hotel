@@ -15,6 +15,7 @@ namespace Parcial_III___Hotel.Controllers
             _frmPayWall = frmPayWall;
             _frmPayWall.cmboxPayWall_TipoPago.SelectedIndexChanged += cmboxPayWall_TipoPago_SelectedIndexChanged;
             _frmPayWall.msktxtboxPayWall_Pago.KeyDown += msktxtboxPayWall_Pago_KeyDown;
+            _frmPayWall.msktxtboxPayWall_NombreTitular.KeyDown += msktxtboxPayWall_NombreTitular_KeyDown;
             _frmPayWall.btnPayWall_Pagar.Click += BtnPayWall_Pagar_Click;
         }
         private void BtnPayWall_Pagar_Click(object? sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace Parcial_III___Hotel.Controllers
 
         private void cmboxPayWall_TipoPago_SelectedIndexChanged(object sender, EventArgs e)
         {
+            _frmPayWall.btnPayWall_Pagar.Enabled = false;
             if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Tarjeta")
             {
                 _frmPayWall.lblPayWall_InfoTarjeta.Visible = true;
@@ -47,6 +49,8 @@ namespace Parcial_III___Hotel.Controllers
                 _frmPayWall.lblPayWall_Cambio.Visible = false;
                 _frmPayWall.msktxtboxPayWall_Pago.Visible = false;
                 _frmPayWall.lblPayWall_Vuelto.Visible = false;
+                _frmPayWall.msktxtboxPayWall_Pago.Clear();
+                _frmPayWall.lblPayWall_Vuelto.Text = "Presione le tecla 'Enter' en el \r\npago ingresado para \r\nobtener el cambio.";
             }
             else if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Efectivo")
             {
@@ -55,8 +59,6 @@ namespace Parcial_III___Hotel.Controllers
                 _frmPayWall.msktxtboxPayWall_Pago.Visible = true;
                 _frmPayWall.lblPayWall_Vuelto.Visible = true;
 
-                _frmPayWall.msktxtboxPayWall_Pago.Text = "";
-                _frmPayWall.lblPayWall_Vuelto.Text = "Presione le tecla 'Enter' en el \r\npago ingresado para \r\nobtener el cambio.";
                 _frmPayWall.lblPayWall_InfoTarjeta.Visible = false;
                 _frmPayWall.lblPayWall_NumT.Visible = false;
                 _frmPayWall.lblPayWall_FechaV.Visible = false;
@@ -66,7 +68,10 @@ namespace Parcial_III___Hotel.Controllers
                 _frmPayWall.msktxtboxPayWall_FechaV.Visible = false;
                 _frmPayWall.msktxtboxPayWall_CVV.Visible = false;
                 _frmPayWall.msktxtboxPayWall_NombreTitular.Visible = false;
-
+                _frmPayWall.msktxtboxPayWall_NumTarjeta.Clear();
+                _frmPayWall.msktxtboxPayWall_FechaV.Clear();
+                _frmPayWall.msktxtboxPayWall_CVV.Clear();
+                _frmPayWall.msktxtboxPayWall_NombreTitular.Clear();
             }
         }
 
@@ -80,6 +85,11 @@ namespace Parcial_III___Hotel.Controllers
                 // Marcar el evento como manejado para evitar que cause otras acciones
                 e.Handled = true;
             }
+        }
+
+        private void msktxtboxPayWall_NombreTitular_KeyDown(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show("Hola");
         }
 
         private void CalcularCambio(decimal aPagar) 

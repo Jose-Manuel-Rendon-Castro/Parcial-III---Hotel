@@ -105,7 +105,7 @@
             // 
             lblPayWall_MetodoPago.AutoSize = true;
             lblPayWall_MetodoPago.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPayWall_MetodoPago.Location = new Point(30, 18);
+            lblPayWall_MetodoPago.Location = new Point(30, 32);
             lblPayWall_MetodoPago.Name = "lblPayWall_MetodoPago";
             lblPayWall_MetodoPago.Size = new Size(167, 30);
             lblPayWall_MetodoPago.TabIndex = 5;
