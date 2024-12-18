@@ -36,9 +36,9 @@
             btnReservarUC_MostrarHabitaciones = new Button();
             btnReservarUC_Cotizar = new Button();
             btnReservarUC_Reservar = new Button();
-            lblReservar_Huesped = new Label();
-            combxReservar_Huesped = new ComboBox();
-            btnReservar_CrearHuesped = new Button();
+            lblReservarUC_Huesped = new Label();
+            combxReservarUC_Huesped = new ComboBox();
+            btnReservarUC_CrearHuesped = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvReservarUC_Habitaciones).BeginInit();
             SuspendLayout();
             // 
@@ -119,43 +119,46 @@
             btnReservarUC_Reservar.Text = "Reservar";
             btnReservarUC_Reservar.UseVisualStyleBackColor = false;
             // 
-            // lblReservar_Huesped
+            // lblReservarUC_Huesped
             // 
-            lblReservar_Huesped.AutoSize = true;
-            lblReservar_Huesped.Font = new Font("Microsoft YaHei UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblReservar_Huesped.Location = new Point(132, 229);
-            lblReservar_Huesped.Name = "lblReservar_Huesped";
-            lblReservar_Huesped.Size = new Size(142, 36);
-            lblReservar_Huesped.TabIndex = 17;
-            lblReservar_Huesped.Text = "Huesped:";
+            lblReservarUC_Huesped.AutoSize = true;
+            lblReservarUC_Huesped.Font = new Font("Microsoft YaHei UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblReservarUC_Huesped.Location = new Point(132, 229);
+            lblReservarUC_Huesped.Name = "lblReservarUC_Huesped";
+            lblReservarUC_Huesped.Size = new Size(142, 36);
+            lblReservarUC_Huesped.TabIndex = 17;
+            lblReservarUC_Huesped.Text = "Huesped:";
             // 
-            // combxReservar_Huesped
+            // combxReservarUC_Huesped
             // 
-            combxReservar_Huesped.FormattingEnabled = true;
-            combxReservar_Huesped.Location = new Point(280, 235);
-            combxReservar_Huesped.Name = "combxReservar_Huesped";
-            combxReservar_Huesped.Size = new Size(330, 28);
-            combxReservar_Huesped.TabIndex = 18;
+            combxReservarUC_Huesped.DropDownHeight = 180;
+            combxReservarUC_Huesped.FormattingEnabled = true;
+            combxReservarUC_Huesped.IntegralHeight = false;
+            combxReservarUC_Huesped.Location = new Point(280, 235);
+            combxReservarUC_Huesped.MaxDropDownItems = 5;
+            combxReservarUC_Huesped.Name = "combxReservarUC_Huesped";
+            combxReservarUC_Huesped.Size = new Size(330, 28);
+            combxReservarUC_Huesped.TabIndex = 1;
             // 
-            // btnReservar_CrearHuesped
+            // btnReservarUC_CrearHuesped
             // 
-            btnReservar_CrearHuesped.BackColor = SystemColors.HotTrack;
-            btnReservar_CrearHuesped.Font = new Font("Microsoft YaHei", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnReservar_CrearHuesped.Location = new Point(434, 284);
-            btnReservar_CrearHuesped.Name = "btnReservar_CrearHuesped";
-            btnReservar_CrearHuesped.Size = new Size(176, 52);
-            btnReservar_CrearHuesped.TabIndex = 19;
-            btnReservar_CrearHuesped.Text = "Crear Huesped";
-            btnReservar_CrearHuesped.UseVisualStyleBackColor = false;
+            btnReservarUC_CrearHuesped.BackColor = SystemColors.HotTrack;
+            btnReservarUC_CrearHuesped.Font = new Font("Microsoft YaHei", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReservarUC_CrearHuesped.Location = new Point(434, 284);
+            btnReservarUC_CrearHuesped.Name = "btnReservarUC_CrearHuesped";
+            btnReservarUC_CrearHuesped.Size = new Size(176, 52);
+            btnReservarUC_CrearHuesped.TabIndex = 2;
+            btnReservarUC_CrearHuesped.Text = "Crear Huesped";
+            btnReservarUC_CrearHuesped.UseVisualStyleBackColor = false;
             // 
             // ReservarUC
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            Controls.Add(btnReservar_CrearHuesped);
-            Controls.Add(combxReservar_Huesped);
-            Controls.Add(lblReservar_Huesped);
+            Controls.Add(btnReservarUC_CrearHuesped);
+            Controls.Add(combxReservarUC_Huesped);
+            Controls.Add(lblReservarUC_Huesped);
             Controls.Add(btnReservarUC_Reservar);
             Controls.Add(btnReservarUC_Cotizar);
             Controls.Add(btnReservarUC_MostrarHabitaciones);
@@ -180,8 +183,8 @@
         public Button btnReservarUC_MostrarHabitaciones;
         public Button btnReservarUC_Cotizar;
         public Button btnReservarUC_Reservar;
-        private Label lblReservar_Huesped;
-        public ComboBox combxReservar_Huesped;
-        public Button btnReservar_CrearHuesped;
+        private Label lblReservarUC_Huesped;
+        public ComboBox combxReservarUC_Huesped;
+        public Button btnReservarUC_CrearHuesped;
     }
 }

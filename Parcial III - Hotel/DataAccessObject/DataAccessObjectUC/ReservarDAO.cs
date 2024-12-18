@@ -11,7 +11,7 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
     {
         public static List<Huesped> ObtenerHuespedes()
         {
-            string selectQuery = "SELECT Nombre FROM huespedes";
+            string selectQuery = "SELECT * FROM huespedes";
             List<Huesped> Huespedes = new List<Huesped>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -23,20 +23,20 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
                     {
                         while (reader.Read())
                         {
-                            int id = Convert.ToInt16(reader["Huesped_Id"]);
+                            int id = Convert.ToInt32(reader["Huesped_Id"]);
                             string? nombre = reader["Nombre"].ToString() ?? string.Empty;
-                            int numCelular = Convert.ToInt32(reader["NumCelular"]);
+                            decimal numCelular = Convert.ToDecimal(reader["NumCelular"]);
                             string? correo = reader["Correo"].ToString() ?? string.Empty;
                             string? membresia = reader["Tipo_Membresia"].ToString() ?? string.Empty;
-                            bool isMembresia = (reader["Estado_Membresia"].ToString() == "1") ? true : false;
+                            bool isMembresia = Convert.ToBoolean(reader["Estado_Membresia"]);
 
                             Huesped huesped = new Huesped(id, nombre, numCelular, correo, membresia, isMembresia);
                             Huespedes.Add(huesped);
                         }
-                        return Huespedes;
                     }
                 }
             }
+            return Huespedes;
         }
         public static void MostrarHabitacionesDisponibles(DataGridView dataGridView)
         {
