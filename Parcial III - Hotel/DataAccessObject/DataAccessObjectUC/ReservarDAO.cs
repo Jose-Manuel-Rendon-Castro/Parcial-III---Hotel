@@ -50,7 +50,6 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
                 }
             }
         }
-
         public static void ReservarHabitacion(string nombre, DateTime fecha_Entrada, DateTime fecha_Salida, DataGridView dataGridView)
         {
             string checkQuery = "INSERT INTO Checks (Fecha_Entrada, Fecha_Salida, Huesped_Id, NumHabitacion, Estado_Checks) VALUES (@Fecha_Entrada, @Fecha_Salida, @Huesped_Id, @NumHabitacion, @Estado_Checks)";
@@ -109,6 +108,22 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public static string CotizarReservacion(DateTime fecha_Entrada, DateTime fecha_Salida, DataGridView dataGridView)
+        {
+            string? habitacion = dataGridView.SelectedRows[0].Cells["Tipo_Habitacion"].Value.ToString();
+            string? numHabitacion = dataGridView.SelectedRows[0].Cells["numHabitacion"].Value.ToString();
+            int precioPorNoche = Convert.ToInt32(dataGridView.SelectedRows[0].Cells["Precio"].Value);
+            int diaEntrada = Convert.ToInt32(fecha_Entrada.Day);
+            int diaSalida = Convert.ToInt32(fecha_Salida.Day);
+            int diasEstancia = diaSalida - diaEntrada;
+            int cotizada = diasEstancia * precioPorNoche;
+
+            return $"Num. Habitacion: {numHabitacion}\n" +
+                $"Vista de habitacion: {habitacion}\n" +
+                $"Precio por noche: ${precioPorNoche}\n" +
+                $"TOTAL (Cotizacion): ${cotizada}";
         }
     }
 }

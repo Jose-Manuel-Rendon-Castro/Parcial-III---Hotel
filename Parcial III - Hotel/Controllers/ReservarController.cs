@@ -20,7 +20,7 @@ namespace Parcial_III___Hotel.Controllers
             _reservarUC.btnReservarUC_MostrarHabitaciones.Click += btnReservarUC_MostrarHabitaciones_Click;
             _reservarUC.btnReservarUC_CrearHuesped.Click += btnReservarUC_CrearHuesped_Click;
             _reservarUC.btnReservarUC_Reservar.Click += btnReservarUC_Reservar_Click;
-
+            _reservarUC.btnReservarUC_Cotizar.Click += btnReservarUC_Cotizar_Click;
             _reservarUC.combxReservarUC_Huesped.TextUpdate += combxReservarUC_Huespedes_TextUpdate;
         }
 
@@ -47,7 +47,7 @@ namespace Parcial_III___Hotel.Controllers
             _reservarUC.combxReservarUC_Huesped.SelectionStart = text.Length;
             _reservarUC.combxReservarUC_Huesped.SelectionLength = 0;
         }
-        private void btnReservarUC_MostrarHabitaciones_Click(object? sender, EventArgs e)
+        private void btnReservarUC_MostrarHabitaciones_Click (object? sender, EventArgs e)
         {
             ReservarDAO.MostrarHabitacionesDisponibles(_reservarUC.dtgvReservarUC_Habitaciones);
         }
@@ -56,7 +56,7 @@ namespace Parcial_III___Hotel.Controllers
             FrmCrearCliente_Huesped frmCrearCliente_Huesped = new FrmCrearCliente_Huesped();
             frmCrearCliente_Huesped.Show();            
         }
-        private void btnReservarUC_Reservar_Click(object? sender, EventArgs e)
+        private void btnReservarUC_Reservar_Click (object? sender, EventArgs e)
         {
             ReservarDAO.ReservarHabitacion(
                 _reservarUC.combxReservarUC_Huesped.Text,
@@ -64,6 +64,10 @@ namespace Parcial_III___Hotel.Controllers
                 _reservarUC.dtpReservarUC_FechaSalida.Value,
                 _reservarUC.dtgvReservarUC_Habitaciones
             );
+        }
+        private void btnReservarUC_Cotizar_Click (object? sender, EventArgs e)
+        {
+            MessageBox.Show(ReservarDAO.CotizarReservacion(_reservarUC.dtpReservarUC_FechaEntrada.Value, _reservarUC.dtpReservarUC_FechaSalida.Value, _reservarUC.dtgvReservarUC_Habitaciones));
         }
     }
 }
