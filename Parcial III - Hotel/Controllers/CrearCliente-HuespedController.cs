@@ -1,5 +1,6 @@
 ﻿using Parcial_III___Hotel.DataAccessObject;
 using Parcial_III___Hotel.Exceptions;
+using Parcial_III___Hotel.Models;
 using Parcial_III___Hotel.Views;
 using ZstdSharp.Unsafe;
 
@@ -27,6 +28,7 @@ namespace Parcial_III___Hotel.Controllers
                 {
                     throw new EmptyFieldException(); 
                 }
+                if (Huesped.EsCorreo(_frmCrearCliente_Huesped.txtbCrearCliente_Correo.Text)) throw new NotEmailException();
 
                 string nombreCompleto = _frmCrearCliente_Huesped.txtbCrearCliente_Nombre.Text.Trim() + " " + _frmCrearCliente_Huesped.txtbCrearCliente_Apellido.Text.Trim();
                 string numCelular = _frmCrearCliente_Huesped.txtbCrearCliente_NumCelular.Text.Trim();
@@ -37,6 +39,10 @@ namespace Parcial_III___Hotel.Controllers
             }
 
             catch (EmptyFieldException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (NotEmailException ex)
             {
                 MessageBox.Show(ex.Message);
             }

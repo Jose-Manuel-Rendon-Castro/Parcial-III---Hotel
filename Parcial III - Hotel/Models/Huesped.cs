@@ -21,5 +21,14 @@ namespace Parcial_III___Hotel.Models
             TipoMembresia = tipoMembresia;
             EstadoMembresia = estadoMembresia;
         }
+
+        public static bool EsCorreo(string input_email)
+        {
+            return input_email.Contains("@gmail.com") ||
+                   input_email.Contains("@hotmail.com") ||
+                   input_email.Contains("@outlook.com") ||
+                   input_email.Contains("@yahoo.com") ||
+                   input_email.Contains("@icloud.com");
+        }
     }
 }
