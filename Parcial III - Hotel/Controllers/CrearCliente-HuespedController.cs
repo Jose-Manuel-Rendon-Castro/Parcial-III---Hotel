@@ -13,6 +13,7 @@ namespace Parcial_III___Hotel.Controllers
         {
             _frmCrearCliente_Huesped = frmCrearCliente_Huesped;
             _frmCrearCliente_Huesped.btnCrearCliente_Crear.Click += btnCrearCliente_Crear_Click;
+            _frmCrearCliente_Huesped.btnCrearCliente_Salir.Click += btnCrearCliente_Salir_Click;
         }
 
         private void btnCrearCliente_Crear_Click (object? sender, EventArgs e)
