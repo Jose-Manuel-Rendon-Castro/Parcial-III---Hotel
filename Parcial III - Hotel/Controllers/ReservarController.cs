@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
 using Parcial_III___Hotel.Models;
+using Parcial_III___Hotel.Views;
 using Parcial_III___Hotel.Views.UserControls;
+using System.Drawing.Text;
 
 namespace Parcial_III___Hotel.Controllers
 {
@@ -14,7 +16,8 @@ namespace Parcial_III___Hotel.Controllers
         public ReservarController(ReservarUC reservarUC)
         {
             _reservarUC = reservarUC;
-            _reservarUC.btnReservarUC_MostrarHabitaciones.Click += btnReservarUC_MostrarHabitaciones_Click; 
+            _reservarUC.btnReservarUC_MostrarHabitaciones.Click += btnReservarUC_MostrarHabitaciones_Click;
+            _reservarUC.btnReservarUC_CrearHuesped.Click += btnReservarUC_CrearHuesped_Click;
             //_reservarUC.btnReservarUC_Reservar.Click += btnReservarUC_Reservar_Click;
 
             _reservarUC.combxReservarUC_Huesped.TextUpdate += combxReservarUC_Huespedes_TextUpdate;
@@ -48,6 +51,11 @@ namespace Parcial_III___Hotel.Controllers
             ReservarDAO.MostrarHabitacionesDisponibles(_reservarUC.dtgvReservarUC_Habitaciones);
         }
 
+        private void btnReservarUC_CrearHuesped_Click (object? sender, EventArgs e)
+        {
+            FrmCrearCliente_Huesped frmCrearCliente_Huesped = new FrmCrearCliente_Huesped();
+            frmCrearCliente_Huesped.Show();            
+        }
         /*private void btnReservarUC_Reservar_Click(object? sender, EventArgs e)
         {
             try

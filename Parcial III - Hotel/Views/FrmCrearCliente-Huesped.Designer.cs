@@ -100,6 +100,7 @@
             // txtbCrearCliente_NumCelular
             // 
             txtbCrearCliente_NumCelular.Location = new Point(12, 452);
+            txtbCrearCliente_NumCelular.MaxLength = 10;
             txtbCrearCliente_NumCelular.Name = "txtbCrearCliente_NumCelular";
             txtbCrearCliente_NumCelular.Size = new Size(293, 27);
             txtbCrearCliente_NumCelular.TabIndex = 9;
@@ -143,6 +144,7 @@
             // 
             // combxCrearCliente_Membresia
             // 
+            combxCrearCliente_Membresia.DropDownStyle = ComboBoxStyle.DropDownList;
             combxCrearCliente_Membresia.FormattingEnabled = true;
             combxCrearCliente_Membresia.Items.AddRange(new object[] { "Membresía básica", "Membresía de lealtad", "Membresía corporativa", "Membresía por suscripción anual" });
             combxCrearCliente_Membresia.Location = new Point(372, 126);

@@ -7,7 +7,7 @@ namespace Parcial_III___Hotel.DataAccessObject
     {
         public static void CrearCliente_Huesped(string newName, string newNumCelular, string newCorreo, string newTipoMembresia)
         {
-            string insertQuery = "INSERT INTO huespedes (Nombre, NumCelular, Correo, Tipo_Membresia) VALUES (@Nombre, @NumCelular, @Correo, @Tipo_Membresia)";
+            string insertQuery = "INSERT INTO huespedes (Nombre, NumCelular, Correo, Tipo_Membresia, Estado_Membresia) VALUES (@Nombre, @NumCelular, @Correo, @Tipo_Membresia, @Estado_Membresia)";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -18,6 +18,7 @@ namespace Parcial_III___Hotel.DataAccessObject
                     insertCommand.Parameters.AddWithValue("@NumCelular", newNumCelular);
                     insertCommand.Parameters.AddWithValue("@Correo", newCorreo);
                     insertCommand.Parameters.AddWithValue("@Tipo_Membresia", newTipoMembresia);
+                    insertCommand.Parameters.AddWithValue("@Estado_Membresia", "1");
                     insertCommand.ExecuteNonQuery();
                 }
             }
