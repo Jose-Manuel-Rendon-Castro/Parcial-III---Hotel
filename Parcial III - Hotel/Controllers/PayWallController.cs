@@ -1,9 +1,6 @@
 ﻿using Parcial_III___Hotel.DataAccessObject;
 using Parcial_III___Hotel.Views;
-using Parcial_III___Hotel.Views.UserControls;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Parcial_III___Hotel.Controllers
 {
@@ -21,10 +18,22 @@ namespace Parcial_III___Hotel.Controllers
         }
         private void btnPayWall_Pagar_Click(object? sender, EventArgs e)
         {
-            if (ValidarFormulario())
+            if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Efectivo")
             {
                 MessageBox.Show("Pago procesado con éxito.");
                 _frmPayWall.Close();
+            }
+            else if (_frmPayWall.cmboxPayWall_TipoPago.Text == "Tarjeta")
+            {
+                if (ValidarFormulario())
+                {
+                    MessageBox.Show("Pago procesado con éxito.");
+                    _frmPayWall.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error.");
+                }
             }
         }
 

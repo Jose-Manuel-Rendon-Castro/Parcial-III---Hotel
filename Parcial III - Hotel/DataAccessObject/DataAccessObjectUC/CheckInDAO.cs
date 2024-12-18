@@ -39,7 +39,7 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
                         
                     foreach (DataGridViewRow row in dataGridView.Rows)
                     {
-                        string? id = row.Cells["ID"].Value?.ToString();
+                        string? id = row.Cells["ID_Checks"].Value?.ToString();
                         updateCommand.Parameters.AddWithValue("@id", id);
                         updateCommand.ExecuteNonQuery();
                     }

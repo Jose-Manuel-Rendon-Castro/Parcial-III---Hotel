@@ -42,14 +42,7 @@
             label1 = new Label();
             label2 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            calendario1 = new PictureBox();
-            calendario2 = new PictureBox();
             btnLimpiarCampos = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
             numPrecioMax = new NumericUpDown();
             numPrecioMin = new NumericUpDown();
             label8 = new Label();
@@ -58,8 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewHabitaciones).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgMostrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgLimpieza).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)calendario1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)calendario2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPrecioMax).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPrecioMin).BeginInit();
             SuspendLayout();
@@ -72,7 +63,7 @@
             btnMostrar.FlatStyle = FlatStyle.Flat;
             btnMostrar.ForeColor = SystemColors.ActiveCaptionText;
             btnMostrar.Location = new Point(1187, 18);
-            btnMostrar.Margin = new Padding(2, 2, 2, 2);
+            btnMostrar.Margin = new Padding(2);
             btnMostrar.Name = "btnMostrar";
             btnMostrar.Size = new Size(167, 97);
             btnMostrar.TabIndex = 2;
@@ -83,7 +74,7 @@
             // 
             cmbDisponibilidad.FormattingEnabled = true;
             cmbDisponibilidad.Location = new Point(71, 147);
-            cmbDisponibilidad.Margin = new Padding(2, 2, 2, 2);
+            cmbDisponibilidad.Margin = new Padding(2);
             cmbDisponibilidad.Name = "cmbDisponibilidad";
             cmbDisponibilidad.Size = new Size(146, 28);
             cmbDisponibilidad.TabIndex = 3;
@@ -104,7 +95,7 @@
             // 
             cmbVista.FormattingEnabled = true;
             cmbVista.Location = new Point(338, 268);
-            cmbVista.Margin = new Padding(2, 2, 2, 2);
+            cmbVista.Margin = new Padding(2);
             cmbVista.Name = "cmbVista";
             cmbVista.Size = new Size(146, 28);
             cmbVista.TabIndex = 6;
@@ -112,7 +103,7 @@
             // txtBusquedaNPersona
             // 
             txtBusquedaNPersona.Location = new Point(605, 146);
-            txtBusquedaNPersona.Margin = new Padding(2, 2, 2, 2);
+            txtBusquedaNPersona.Margin = new Padding(2);
             txtBusquedaNPersona.Name = "txtBusquedaNPersona";
             txtBusquedaNPersona.Size = new Size(359, 27);
             txtBusquedaNPersona.TabIndex = 12;
@@ -121,7 +112,7 @@
             // 
             dataGridViewHabitaciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewHabitaciones.Location = new Point(0, 334);
-            dataGridViewHabitaciones.Margin = new Padding(2, 2, 2, 2);
+            dataGridViewHabitaciones.Margin = new Padding(2);
             dataGridViewHabitaciones.Name = "dataGridViewHabitaciones";
             dataGridViewHabitaciones.RowHeadersWidth = 62;
             dataGridViewHabitaciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -136,7 +127,7 @@
             imgMostrar.BackgroundImageLayout = ImageLayout.Zoom;
             imgMostrar.Image = (Image)resources.GetObject("imgMostrar.Image");
             imgMostrar.Location = new Point(1350, 18);
-            imgMostrar.Margin = new Padding(2, 2, 2, 2);
+            imgMostrar.Margin = new Padding(2);
             imgMostrar.Name = "imgMostrar";
             imgMostrar.Size = new Size(98, 97);
             imgMostrar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -147,7 +138,7 @@
             // 
             imgLimpieza.Image = (Image)resources.GetObject("imgLimpieza.Image");
             imgLimpieza.Location = new Point(1350, 195);
-            imgLimpieza.Margin = new Padding(2, 2, 2, 2);
+            imgLimpieza.Margin = new Padding(2);
             imgLimpieza.Name = "imgLimpieza";
             imgLimpieza.Size = new Size(98, 97);
             imgLimpieza.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -215,70 +206,6 @@
             label4.TabIndex = 22;
             label4.Text = "Busqueda de reservaciones";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.Control;
-            label5.Font = new Font("Microsoft YaHei UI", 12F);
-            label5.Location = new Point(601, 232);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(209, 27);
-            label5.TabIndex = 23;
-            label5.Text = "Busqueda por fecha ";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = SystemColors.Control;
-            label6.Font = new Font("Microsoft YaHei UI", 12F);
-            label6.Location = new Point(605, 290);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(38, 27);
-            label6.TabIndex = 24;
-            label6.Text = "De";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = SystemColors.Control;
-            label7.Font = new Font("Microsoft YaHei UI", 12F);
-            label7.Location = new Point(742, 290);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(31, 27);
-            label7.TabIndex = 25;
-            label7.Text = "Al";
-            // 
-            // calendario1
-            // 
-            calendario1.AccessibleRole = AccessibleRole.None;
-            calendario1.BackColor = Color.MediumTurquoise;
-            calendario1.BackgroundImageLayout = ImageLayout.Zoom;
-            calendario1.Image = (Image)resources.GetObject("calendario1.Image");
-            calendario1.Location = new Point(650, 266);
-            calendario1.Margin = new Padding(2, 2, 2, 2);
-            calendario1.Name = "calendario1";
-            calendario1.Size = new Size(73, 56);
-            calendario1.SizeMode = PictureBoxSizeMode.StretchImage;
-            calendario1.TabIndex = 26;
-            calendario1.TabStop = false;
-            // 
-            // calendario2
-            // 
-            calendario2.AccessibleRole = AccessibleRole.None;
-            calendario2.BackColor = Color.MediumTurquoise;
-            calendario2.BackgroundImageLayout = ImageLayout.Zoom;
-            calendario2.Image = (Image)resources.GetObject("calendario2.Image");
-            calendario2.Location = new Point(795, 266);
-            calendario2.Margin = new Padding(2, 2, 2, 2);
-            calendario2.Name = "calendario2";
-            calendario2.Size = new Size(73, 56);
-            calendario2.SizeMode = PictureBoxSizeMode.StretchImage;
-            calendario2.TabIndex = 27;
-            calendario2.TabStop = false;
-            // 
             // btnLimpiarCampos
             // 
             btnLimpiarCampos.BackColor = SystemColors.ActiveCaption;
@@ -287,35 +214,17 @@
             btnLimpiarCampos.FlatStyle = FlatStyle.Flat;
             btnLimpiarCampos.ForeColor = SystemColors.ActiveCaptionText;
             btnLimpiarCampos.Location = new Point(1187, 195);
-            btnLimpiarCampos.Margin = new Padding(2, 2, 2, 2);
+            btnLimpiarCampos.Margin = new Padding(2);
             btnLimpiarCampos.Name = "btnLimpiarCampos";
             btnLimpiarCampos.Size = new Size(167, 97);
             btnLimpiarCampos.TabIndex = 30;
             btnLimpiarCampos.Text = "Limpiar campos";
             btnLimpiarCampos.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(983, 38);
-            dateTimePicker1.Margin = new Padding(2, 2, 2, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(241, 27);
-            dateTimePicker1.TabIndex = 31;
-            dateTimePicker1.Visible = false;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(1008, 92);
-            dateTimePicker2.Margin = new Padding(2, 2, 2, 2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(241, 27);
-            dateTimePicker2.TabIndex = 32;
-            dateTimePicker2.Visible = false;
-            // 
             // numPrecioMax
             // 
             numPrecioMax.Location = new Point(469, 147);
-            numPrecioMax.Margin = new Padding(2, 2, 2, 2);
+            numPrecioMax.Margin = new Padding(2);
             numPrecioMax.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             numPrecioMax.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
             numPrecioMax.Name = "numPrecioMax";
@@ -326,7 +235,7 @@
             // numPrecioMin
             // 
             numPrecioMin.Location = new Point(324, 147);
-            numPrecioMin.Margin = new Padding(2, 2, 2, 2);
+            numPrecioMin.Margin = new Padding(2);
             numPrecioMin.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             numPrecioMin.Minimum = new decimal(new int[] { 100, 0, 0, 0 });
             numPrecioMin.Name = "numPrecioMin";
@@ -362,7 +271,7 @@
             // 
             cmbTipoHabitacion.FormattingEnabled = true;
             cmbTipoHabitacion.Location = new Point(71, 266);
-            cmbTipoHabitacion.Margin = new Padding(2, 2, 2, 2);
+            cmbTipoHabitacion.Margin = new Padding(2);
             cmbTipoHabitacion.Name = "cmbTipoHabitacion";
             cmbTipoHabitacion.Size = new Size(146, 28);
             cmbTipoHabitacion.TabIndex = 37;
@@ -377,15 +286,8 @@
             Controls.Add(label8);
             Controls.Add(numPrecioMin);
             Controls.Add(numPrecioMax);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
             Controls.Add(btnLimpiarCampos);
             Controls.Add(imgMostrar);
-            Controls.Add(calendario2);
-            Controls.Add(calendario1);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -403,8 +305,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewHabitaciones).EndInit();
             ((System.ComponentModel.ISupportInitialize)imgMostrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)imgLimpieza).EndInit();
-            ((System.ComponentModel.ISupportInitialize)calendario1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)calendario2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numPrecioMax).EndInit();
             ((System.ComponentModel.ISupportInitialize)numPrecioMin).EndInit();
             ResumeLayout(false);
@@ -424,14 +324,7 @@
         private Label label1;
         private Label label2;
         private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        public PictureBox calendario1;
-        public PictureBox calendario2;
         public Button btnLimpiarCampos;
-        public DateTimePicker dateTimePicker1;
-        public DateTimePicker dateTimePicker2;
         public ComboBox cmbVista;
         private Label label8;
         private Label label9;

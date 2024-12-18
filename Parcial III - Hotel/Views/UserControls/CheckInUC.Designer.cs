@@ -33,12 +33,12 @@
             dtgvCheckInUC_Lista = new DataGridView();
             dtgvCheckInUC_Selected = new DataGridView();
             btnCheckInUC_ConfirmarCheckIn = new Button();
-            ID = new DataGridViewTextBoxColumn();
+            ID_Checks = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
+            Estado_Checks = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckInUC_Lista).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckInUC_Selected).BeginInit();
             SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             dtgvCheckInUC_Selected.AllowUserToAddRows = false;
             dtgvCheckInUC_Selected.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvCheckInUC_Selected.Columns.AddRange(new DataGridViewColumn[] { ID, Column2, Column3, Column4, Column5, Column6 });
+            dtgvCheckInUC_Selected.Columns.AddRange(new DataGridViewColumn[] { ID_Checks, Column2, Column3, Column4, Column5, Estado_Checks });
             dtgvCheckInUC_Selected.EditMode = DataGridViewEditMode.EditProgrammatically;
             dtgvCheckInUC_Selected.Location = new Point(41, 504);
             dtgvCheckInUC_Selected.Name = "dtgvCheckInUC_Selected";
@@ -103,12 +103,12 @@
             btnCheckInUC_ConfirmarCheckIn.Text = "Confirmar Check-In";
             btnCheckInUC_ConfirmarCheckIn.UseVisualStyleBackColor = false;
             // 
-            // ID
+            // ID_Checks
             // 
-            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ID.HeaderText = "ID";
-            ID.MinimumWidth = 6;
-            ID.Name = "ID";
+            ID_Checks.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ID_Checks.HeaderText = "ID";
+            ID_Checks.MinimumWidth = 6;
+            ID_Checks.Name = "ID_Checks";
             // 
             // Column2
             // 
@@ -138,12 +138,12 @@
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
             // 
-            // Column6
+            // Estado_Checks
             // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column6.HeaderText = "Estado de Check";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
+            Estado_Checks.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Estado_Checks.HeaderText = "Estado de Check";
+            Estado_Checks.MinimumWidth = 6;
+            Estado_Checks.Name = "Estado_Checks";
             // 
             // CheckInUC
             // 
@@ -169,11 +169,11 @@
         public Button btnCheckInUC_ConfirmarCheckIn;
         public DataGridView dtgvCheckInUC_Lista;
         public DataGridView dtgvCheckInUC_Selected;
-        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn ID_Checks;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Estado_Checks;
     }
 }

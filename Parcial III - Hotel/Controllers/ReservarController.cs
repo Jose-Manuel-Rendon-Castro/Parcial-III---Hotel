@@ -1,10 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using Parcial_III___Hotel.DAO;
-using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
+﻿using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
 using Parcial_III___Hotel.Models;
 using Parcial_III___Hotel.Views;
 using Parcial_III___Hotel.Views.UserControls;
-using System.Drawing.Text;
 
 namespace Parcial_III___Hotel.Controllers
 {
@@ -12,7 +9,6 @@ namespace Parcial_III___Hotel.Controllers
     {
         private ReservarUC _reservarUC;
         private List<Huesped> huespedes = ReservarDAO.ObtenerHuespedes();
-        private double totalQuote;
 
         public ReservarController(ReservarUC reservarUC)
         {
