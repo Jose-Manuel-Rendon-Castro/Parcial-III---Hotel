@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Tls;
 using Parcial_III___Hotel.DAO;
+using Parcial_III___Hotel.Models;
 using Parcial_III___Hotel.Views.UserControls;
 using System.Data;
 
@@ -8,10 +9,10 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
 {
     public class ReservarDAO : ConnectionString
     {
-        public static void ObtenerHuespedes()
+        public static List<Huesped> ObtenerHuespedes()
         {
-            string selectQuery = "SELECT * FROM tabla1";
-            List<Familiar> Familiares = new List<Familiar>();
+            string selectQuery = "SELECT Nombre FROM huespedes";
+            List<Huesped> Huespedes = new List<Huesped>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -22,15 +23,17 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
                     {
                         while (reader.Read())
                         {
-                            int id = Convert.ToInt16(reader["id"]);
-                            string? nombre = reader["nombre"].ToString() ?? string.Empty;
-                            string? apellido = reader["apellido"].ToString() ?? string.Empty;
-                            int edad = Convert.ToInt16(reader["edad"]);
+                            int id = Convert.ToInt16(reader["Huesped_Id"]);
+                            string? nombre = reader["Nombre"].ToString() ?? string.Empty;
+                            int numCelular = Convert.ToInt32(reader["NumCelular"]);
+                            string? correo = reader["Correo"].ToString() ?? string.Empty;
+                            string? membresia = reader["Tipo_Membresia"].ToString() ?? string.Empty;
+                            bool isMembresia = (reader["Estado_Membresia"].ToString() == "1") ? true : false;
 
-                            Familiar familiar = new Familiar(id, nombre, apellido, edad);
-                            Familiares.Add(familiar);
+                            Huesped huesped = new Huesped(id, nombre, numCelular, correo, membresia, isMembresia);
+                            Huespedes.Add(huesped);
                         }
-                        return Familiares;
+                        return Huespedes;
                     }
                 }
             }
