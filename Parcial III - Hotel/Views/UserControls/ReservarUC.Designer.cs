@@ -28,64 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblReservarUC_Nombre = new Label();
-            lblReservarUC_Celular = new Label();
-            lblReservarUC_Correo = new Label();
-            lblReservarUC_Membresia = new Label();
             lblReservarUC_FechaEntrada = new Label();
             lblReservarUC_FechaSalida = new Label();
             dtgvReservarUC_Habitaciones = new DataGridView();
-            txtbReservarUC_Nombre = new TextBox();
-            txtbReservarUC_Celular = new TextBox();
-            txtbReservarUC_Correo = new TextBox();
-            cmboxReservarUC_Membresia = new ComboBox();
             dtpReservarUC_FechaEntrada = new DateTimePicker();
             dtpReservarUC_FechaSalida = new DateTimePicker();
             btnReservarUC_MostrarHabitaciones = new Button();
             btnReservarUC_Cotizar = new Button();
             btnReservarUC_Reservar = new Button();
+            lblReservar_Huesped = new Label();
+            combxReservar_Huesped = new ComboBox();
+            btnReservar_CrearHuesped = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvReservarUC_Habitaciones).BeginInit();
             SuspendLayout();
-            // 
-            // lblReservarUC_Nombre
-            // 
-            lblReservarUC_Nombre.AutoSize = true;
-            lblReservarUC_Nombre.Font = new Font("Microsoft YaHei UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblReservarUC_Nombre.Location = new Point(137, 235);
-            lblReservarUC_Nombre.Name = "lblReservarUC_Nombre";
-            lblReservarUC_Nombre.Size = new Size(127, 36);
-            lblReservarUC_Nombre.TabIndex = 1;
-            lblReservarUC_Nombre.Text = "Nombre";
-            // 
-            // lblReservarUC_Celular
-            // 
-            lblReservarUC_Celular.AutoSize = true;
-            lblReservarUC_Celular.Font = new Font("Microsoft YaHei UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblReservarUC_Celular.Location = new Point(157, 310);
-            lblReservarUC_Celular.Name = "lblReservarUC_Celular";
-            lblReservarUC_Celular.Size = new Size(107, 36);
-            lblReservarUC_Celular.TabIndex = 2;
-            lblReservarUC_Celular.Text = "Celular";
-            // 
-            // lblReservarUC_Correo
-            // 
-            lblReservarUC_Correo.AutoSize = true;
-            lblReservarUC_Correo.Font = new Font("Microsoft YaHei UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblReservarUC_Correo.Location = new Point(156, 384);
-            lblReservarUC_Correo.Name = "lblReservarUC_Correo";
-            lblReservarUC_Correo.Size = new Size(108, 36);
-            lblReservarUC_Correo.TabIndex = 3;
-            lblReservarUC_Correo.Text = "Correo";
-            // 
-            // lblReservarUC_Membresia
-            // 
-            lblReservarUC_Membresia.AutoSize = true;
-            lblReservarUC_Membresia.Font = new Font("Microsoft YaHei UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblReservarUC_Membresia.Location = new Point(100, 455);
-            lblReservarUC_Membresia.Name = "lblReservarUC_Membresia";
-            lblReservarUC_Membresia.Size = new Size(164, 36);
-            lblReservarUC_Membresia.TabIndex = 4;
-            lblReservarUC_Membresia.Text = "Membresia";
             // 
             // lblReservarUC_FechaEntrada
             // 
@@ -115,39 +70,6 @@
             dtgvReservarUC_Habitaciones.RowHeadersWidth = 51;
             dtgvReservarUC_Habitaciones.Size = new Size(664, 373);
             dtgvReservarUC_Habitaciones.TabIndex = 7;
-            // 
-            // txtbReservarUC_Nombre
-            // 
-            txtbReservarUC_Nombre.Font = new Font("Microsoft YaHei", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbReservarUC_Nombre.Location = new Point(280, 233);
-            txtbReservarUC_Nombre.Name = "txtbReservarUC_Nombre";
-            txtbReservarUC_Nombre.Size = new Size(330, 38);
-            txtbReservarUC_Nombre.TabIndex = 8;
-            // 
-            // txtbReservarUC_Celular
-            // 
-            txtbReservarUC_Celular.Font = new Font("Microsoft YaHei", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbReservarUC_Celular.Location = new Point(280, 308);
-            txtbReservarUC_Celular.Name = "txtbReservarUC_Celular";
-            txtbReservarUC_Celular.Size = new Size(330, 38);
-            txtbReservarUC_Celular.TabIndex = 9;
-            // 
-            // txtbReservarUC_Correo
-            // 
-            txtbReservarUC_Correo.Font = new Font("Microsoft YaHei", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtbReservarUC_Correo.Location = new Point(280, 382);
-            txtbReservarUC_Correo.Name = "txtbReservarUC_Correo";
-            txtbReservarUC_Correo.Size = new Size(330, 38);
-            txtbReservarUC_Correo.TabIndex = 10;
-            // 
-            // cmboxReservarUC_Membresia
-            // 
-            cmboxReservarUC_Membresia.Font = new Font("Microsoft YaHei", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmboxReservarUC_Membresia.FormattingEnabled = true;
-            cmboxReservarUC_Membresia.Location = new Point(280, 453);
-            cmboxReservarUC_Membresia.Name = "cmboxReservarUC_Membresia";
-            cmboxReservarUC_Membresia.Size = new Size(330, 38);
-            cmboxReservarUC_Membresia.TabIndex = 11;
             // 
             // dtpReservarUC_FechaEntrada
             // 
@@ -197,27 +119,51 @@
             btnReservarUC_Reservar.Text = "Reservar";
             btnReservarUC_Reservar.UseVisualStyleBackColor = false;
             // 
+            // lblReservar_Huesped
+            // 
+            lblReservar_Huesped.AutoSize = true;
+            lblReservar_Huesped.Font = new Font("Microsoft YaHei UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblReservar_Huesped.Location = new Point(132, 229);
+            lblReservar_Huesped.Name = "lblReservar_Huesped";
+            lblReservar_Huesped.Size = new Size(142, 36);
+            lblReservar_Huesped.TabIndex = 17;
+            lblReservar_Huesped.Text = "Huesped:";
+            // 
+            // combxReservar_Huesped
+            // 
+            combxReservar_Huesped.FormattingEnabled = true;
+            combxReservar_Huesped.Location = new Point(280, 235);
+            combxReservar_Huesped.Name = "combxReservar_Huesped";
+            combxReservar_Huesped.Size = new Size(330, 28);
+            combxReservar_Huesped.TabIndex = 18;
+            // 
+            // btnReservar_CrearHuesped
+            // 
+            btnReservar_CrearHuesped.BackColor = SystemColors.HotTrack;
+            btnReservar_CrearHuesped.Font = new Font("Microsoft YaHei", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReservar_CrearHuesped.Location = new Point(434, 284);
+            btnReservar_CrearHuesped.Name = "btnReservar_CrearHuesped";
+            btnReservar_CrearHuesped.Size = new Size(176, 52);
+            btnReservar_CrearHuesped.TabIndex = 19;
+            btnReservar_CrearHuesped.Text = "Crear Huesped";
+            btnReservar_CrearHuesped.UseVisualStyleBackColor = false;
+            // 
             // ReservarUC
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
+            Controls.Add(btnReservar_CrearHuesped);
+            Controls.Add(combxReservar_Huesped);
+            Controls.Add(lblReservar_Huesped);
             Controls.Add(btnReservarUC_Reservar);
             Controls.Add(btnReservarUC_Cotizar);
             Controls.Add(btnReservarUC_MostrarHabitaciones);
             Controls.Add(dtpReservarUC_FechaSalida);
             Controls.Add(dtpReservarUC_FechaEntrada);
-            Controls.Add(cmboxReservarUC_Membresia);
-            Controls.Add(txtbReservarUC_Correo);
-            Controls.Add(txtbReservarUC_Celular);
-            Controls.Add(txtbReservarUC_Nombre);
             Controls.Add(dtgvReservarUC_Habitaciones);
             Controls.Add(lblReservarUC_FechaSalida);
             Controls.Add(lblReservarUC_FechaEntrada);
-            Controls.Add(lblReservarUC_Membresia);
-            Controls.Add(lblReservarUC_Correo);
-            Controls.Add(lblReservarUC_Celular);
-            Controls.Add(lblReservarUC_Nombre);
             Name = "ReservarUC";
             Size = new Size(1448, 804);
             ((System.ComponentModel.ISupportInitialize)dtgvReservarUC_Habitaciones).EndInit();
@@ -226,21 +172,16 @@
         }
 
         #endregion
-        private Label lblReservarUC_Nombre;
-        private Label lblReservarUC_Celular;
-        private Label lblReservarUC_Correo;
-        private Label lblReservarUC_Membresia;
         private Label lblReservarUC_FechaEntrada;
         private Label lblReservarUC_FechaSalida;
         public DataGridView dtgvReservarUC_Habitaciones;
-        public TextBox txtbReservarUC_Nombre;
-        public TextBox txtbReservarUC_Celular;
-        public TextBox txtbReservarUC_Correo;
-        public ComboBox cmboxReservarUC_Membresia;
         public DateTimePicker dtpReservarUC_FechaEntrada;
         public DateTimePicker dtpReservarUC_FechaSalida;
         public Button btnReservarUC_MostrarHabitaciones;
         public Button btnReservarUC_Cotizar;
         public Button btnReservarUC_Reservar;
+        private Label lblReservar_Huesped;
+        public ComboBox combxReservar_Huesped;
+        public Button btnReservar_CrearHuesped;
     }
 }
