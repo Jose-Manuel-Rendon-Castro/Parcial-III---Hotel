@@ -27,11 +27,12 @@ namespace Parcial_III___Hotel.Controllers
                     throw new EmptyFieldException(); 
                 }
 
-                CrearCliente_HuespedDAO.CrearCliente_Huesped(
-                    _frmCrearCliente_Huesped.txtbCrearCliente_Nombre.Text,
-                    _frmCrearCliente_Huesped.txtbCrearCliente_Apellido.Text,
-                    _frmCrearCliente_Huesped.txtbCrearCliente_Correo.Text,
-                    _frmCrearCliente_Huesped.txtbCrearCliente_NumCelular.Text);
+                string nombreCompleto = _frmCrearCliente_Huesped.txtbCrearCliente_Nombre.Text.Trim() + " " + _frmCrearCliente_Huesped.txtbCrearCliente_Apellido.Text.Trim();
+                string numCelular = _frmCrearCliente_Huesped.txtbCrearCliente_NumCelular.Text.Trim();
+                string correo = _frmCrearCliente_Huesped.txtbCrearCliente_Correo.Text.Trim();
+                string membresia = _frmCrearCliente_Huesped.combxCrearCliente_Membresia.Text.Trim();
+
+                CrearCliente_HuespedDAO.CrearCliente_Huesped(nombreCompleto, numCelular, correo, membresia);
             }
 
             catch (EmptyFieldException ex)

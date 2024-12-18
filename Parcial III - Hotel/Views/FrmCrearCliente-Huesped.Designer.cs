@@ -212,8 +212,8 @@
         public TextBox txtbCrearCliente_Correo;
         public TextBox txtbCrearCliente_NumCelular;
         private Label lblCrearCliente_Membresia;
-        private ComboBox combxCrearCliente_Membresia;
         public Button btnCrearCliente_Crear;
         public Button btnCrearCliente_Salir;
+        public ComboBox combxCrearCliente_Membresia;
     }
 }
