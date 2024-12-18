@@ -1,4 +1,5 @@
-﻿using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
+﻿using Parcial_III___Hotel.DataAccessObject;
+using Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC;
 using Parcial_III___Hotel.Models;
 using Parcial_III___Hotel.Views;
 using Parcial_III___Hotel.Views.UserControls;

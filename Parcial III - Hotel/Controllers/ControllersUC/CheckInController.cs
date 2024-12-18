@@ -44,25 +44,30 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                 {
                     MessageBox.Show("Pago Requerido Antes de Check In");
                     decimal Id_Check = Convert.ToDecimal(row.Cells["ID_Checks"].Value);
+                    
                     _mediadorPayWall.NotificarPagoRequerido(Id_Check);
                 }
             }
             CheckInDAO.UpdateCheckStatus(_checkInUC.dtgvCheckInUC_Selected);
             _checkInUC.dtgvCheckInUC_Selected.Rows.Clear();
+            Load(sender, e);
         }
 
         public void Load (object? sender, EventArgs e)
         {
             CheckInDAO.TablaHuespedes(_checkInUC.dtgvCheckInUC_Lista);
             updateTable();
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.HeaderText = "Hacer Check-In";
-            btn.Name = "btnCheckInUC_dtgvTransfer";
-            btn.Text = "Check";
-            btn.UseColumnTextForButtonValue = true;
+            if (!_checkInUC.dtgvCheckInUC_Lista.Columns.Contains("btnCheckInUC_dtgvTransfer"))
+            {
+                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                btn.HeaderText = "Hacer Check-In";
+                btn.Name = "btnCheckInUC_dtgvTransfer";
+                btn.Text = "Check";
+                btn.UseColumnTextForButtonValue = true;
 
-            //Se añade el boton a la nueva columna de la tabla
-            _checkInUC.dtgvCheckInUC_Lista.Columns.Add(btn);
+                // Añadir el botón como una nueva columna a la tabla
+                _checkInUC.dtgvCheckInUC_Lista.Columns.Add(btn);
+            }
         }
 
         private void dtgvCheckInUC_Lista_CellContentClick (object? sender, DataGridViewCellEventArgs e)

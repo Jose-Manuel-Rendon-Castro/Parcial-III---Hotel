@@ -34,10 +34,10 @@
             dtgvCheckInUC_Selected = new DataGridView();
             btnCheckInUC_ConfirmarCheckIn = new Button();
             ID_Checks = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
+            Fecha_Entrada = new DataGridViewTextBoxColumn();
+            Fecha_Salida = new DataGridViewTextBoxColumn();
+            Id_Huesped = new DataGridViewTextBoxColumn();
+            Num_Habitacion = new DataGridViewTextBoxColumn();
             Estado_Checks = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckInUC_Lista).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckInUC_Selected).BeginInit();
@@ -82,7 +82,7 @@
             // 
             dtgvCheckInUC_Selected.AllowUserToAddRows = false;
             dtgvCheckInUC_Selected.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvCheckInUC_Selected.Columns.AddRange(new DataGridViewColumn[] { ID_Checks, Column2, Column3, Column4, Column5, Estado_Checks });
+            dtgvCheckInUC_Selected.Columns.AddRange(new DataGridViewColumn[] { ID_Checks, Fecha_Entrada, Fecha_Salida, Id_Huesped, Num_Habitacion, Estado_Checks });
             dtgvCheckInUC_Selected.EditMode = DataGridViewEditMode.EditProgrammatically;
             dtgvCheckInUC_Selected.Location = new Point(41, 504);
             dtgvCheckInUC_Selected.Name = "dtgvCheckInUC_Selected";
@@ -110,33 +110,33 @@
             ID_Checks.MinimumWidth = 6;
             ID_Checks.Name = "ID_Checks";
             // 
-            // Column2
+            // Fecha_Entrada
             // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Fecha de entrada";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
+            Fecha_Entrada.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Fecha_Entrada.HeaderText = "Fecha de entrada";
+            Fecha_Entrada.MinimumWidth = 6;
+            Fecha_Entrada.Name = "Fecha_Entrada";
             // 
-            // Column3
+            // Fecha_Salida
             // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Fecha de salida";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
+            Fecha_Salida.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Fecha_Salida.HeaderText = "Fecha de salida";
+            Fecha_Salida.MinimumWidth = 6;
+            Fecha_Salida.Name = "Fecha_Salida";
             // 
-            // Column4
+            // Id_Huesped
             // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.HeaderText = "ID Huesped";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
+            Id_Huesped.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Id_Huesped.HeaderText = "ID Huesped";
+            Id_Huesped.MinimumWidth = 6;
+            Id_Huesped.Name = "Id_Huesped";
             // 
-            // Column5
+            // Num_Habitacion
             // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.HeaderText = "Numero Habitacion";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
+            Num_Habitacion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Num_Habitacion.HeaderText = "Numero Habitacion";
+            Num_Habitacion.MinimumWidth = 6;
+            Num_Habitacion.Name = "Num_Habitacion";
             // 
             // Estado_Checks
             // 
@@ -170,10 +170,10 @@
         public DataGridView dtgvCheckInUC_Lista;
         public DataGridView dtgvCheckInUC_Selected;
         private DataGridViewTextBoxColumn ID_Checks;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Fecha_Entrada;
+        private DataGridViewTextBoxColumn Fecha_Salida;
+        private DataGridViewTextBoxColumn Id_Huesped;
+        private DataGridViewTextBoxColumn Num_Habitacion;
         private DataGridViewTextBoxColumn Estado_Checks;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Parcial_III___Hotel.DAO;
 using Parcial_III___Hotel.Models;
+using Parcial_III___Hotel.Views.UserControls;
 using System.Data;
 
 namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
@@ -36,7 +37,7 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
             }
             return Huespedes;
         }
-        private static int obtenerIdHuesped(string nombre)
+        public static int obtenerIdHuesped(string nombre)
         {
             string selectQuery = "SELECT Huesped_Id FROM huespedes WHERE Nombre = @Nombre";
 
@@ -69,10 +70,11 @@ namespace Parcial_III___Hotel.DataAccessObject.DataAccessObjectUC
                         cmd.Parameters.AddWithValue("@Fecha_Salida", fecha_Salida);
                         cmd.Parameters.AddWithValue("@Huesped_Id", huespedId);
                         cmd.Parameters.AddWithValue("@NumHabitacion", roomNumber);
-                        cmd.Parameters.AddWithValue("@Estado_Checks", "Pendiente");
+                        cmd.Parameters.AddWithValue("@Estado_Checks", "En Check In");
                         cmd.ExecuteNonQuery();
                     }
                 }
+                PayWallDAO.GenerarPago(huespedId.ToString(), roomNumber,PayWallDAO.ObtenerIdCheck());
                 MessageBox.Show("Reservacion creada exitosamente!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
