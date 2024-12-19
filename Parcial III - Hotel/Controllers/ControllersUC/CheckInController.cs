@@ -14,6 +14,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
             _checkInUC = checkInUC;
             _checkInUC.Load += Load;
             _checkInUC.btnCheckInUC_ConfirmarCheckIn.Click += btnCheckInUC_ConfirmarCheckIn_Click;
+            _checkInUC.btnCheckInUC_Refresh.Click += btnCheckInUC_Refresh_Click;
             _checkInUC.dtgvCheckInUC_Lista.CellContentClick += dtgvCheckInUC_Lista_CellContentClick;
             _mediadorPayWall = mediadorPayWall;
         } 
@@ -25,11 +26,11 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                 string? status = row.Cells["Estado_Checks"].Value?.ToString();
                 if (status == "IN")
                 {
-                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Red;
+                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Green;
                 }
                 else
                 {
-                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Green;
+                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Red;
                 }
             }
             _checkInUC.dtgvCheckInUC_Lista.Invalidate();
@@ -50,6 +51,11 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
             }
             CheckInDAO.UpdateCheckStatus(_checkInUC.dtgvCheckInUC_Selected);
             _checkInUC.dtgvCheckInUC_Selected.Rows.Clear();
+            Load(sender, e);
+        }
+        
+        private void btnCheckInUC_Refresh_Click (object? sender, EventArgs e)
+        {
             Load(sender, e);
         }
 

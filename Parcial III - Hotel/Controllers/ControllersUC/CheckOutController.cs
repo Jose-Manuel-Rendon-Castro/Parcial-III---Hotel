@@ -16,7 +16,8 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
         {
             _checkOutUC = checkOutUC;
             _checkOutUC.Load += Load;
-            _checkOutUC.btnCheckOutUC_ConfirmarCheckOut.Click += btnCheckInUC_ConfirmarCheckOut_Click;
+            _checkOutUC.btnCheckOutUC_ConfirmarCheckOut.Click += btnCheckOutUC_ConfirmarCheckOut_Click;
+            _checkOutUC.btnCheckOutUC_Refresh.Click += btnCheckOut_Refresh_Click;
             _checkOutUC.dtgvCheckOutUC_Lista.CellContentClick += dtgvCheckOutUC_Lista_CellContentClick;
         }
 
@@ -25,36 +26,46 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
             foreach (DataGridViewRow row in _checkOutUC.dtgvCheckOutUC_Lista.Rows)
             {
                 string? status = row.Cells["Estado_Checks"].Value?.ToString();
-                if (status == "Pendiente")
+                if (status == "OUT")
                 {
-                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Red;
+                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Green;
                 }
                 else
                 {
-                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Green;
+                    row.Cells["Estado_Checks"].Style.ForeColor = Color.Red;
                 }
             }
             _checkOutUC.dtgvCheckOutUC_Lista.Invalidate();
         }
 
-        private void btnCheckInUC_ConfirmarCheckOut_Click(object? sender, EventArgs e)
+        private void btnCheckOutUC_ConfirmarCheckOut_Click(object? sender, EventArgs e)
         {
             CheckOutDAO.UpdateCheckStatus(_checkOutUC.dtgvCheckOutUC_Selected);
             _checkOutUC.dtgvCheckOutUC_Selected.Rows.Clear();
+            Load(sender, e);
+        }
+
+        private void btnCheckOut_Refresh_Click (object? sender, EventArgs e)
+        {
+            Load(sender, e);
         }
 
         public void Load(object? sender, EventArgs e)
         {
             CheckOutDAO.TablaHuespedes(_checkOutUC.dtgvCheckOutUC_Lista);
             updateTable();
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.HeaderText = "Hacer Check-In";
-            btn.Name = "btnCheckInUC_dtgvTransfer";
-            btn.Text = "Check";
-            btn.UseColumnTextForButtonValue = true;
+            if (!_checkOutUC.dtgvCheckOutUC_Lista.Columns.Contains("btnCheckOutUC_dtgvTransfer"))
+            {
+                DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+                btn.Width = 130;
+                btn.HeaderText = "Hacer Check-Out";
+                btn.Name = "btnCheckOutUC_dtgvTransfer";
+                btn.Text = "Check";
+                btn.UseColumnTextForButtonValue = true;
 
-            //Se añade el boton a la nueva columna de la tabla
-            _checkOutUC.dtgvCheckOutUC_Lista.Columns.Add(btn);
+                //Se añade el boton a la nueva columna de la tabla
+                _checkOutUC.dtgvCheckOutUC_Lista.Columns.Add(btn);
+            }
         }
 
         private void dtgvCheckOutUC_Lista_CellContentClick(object? sender, DataGridViewCellEventArgs e)
@@ -64,7 +75,7 @@ namespace Parcial_III___Hotel.Controllers.ControllersUC
                 _checkOutUC.dtgvCheckOutUC_Selected.Rows.Clear();
             }
             string col = _checkOutUC.dtgvCheckOutUC_Lista.Columns[e.ColumnIndex].HeaderText;
-            if (col == "Hacer Check-In")
+            if (col == "Hacer Check-Out")
             {
 
                 //Obtener el estado de la fila seleccionada

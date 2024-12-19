@@ -39,6 +39,7 @@
             dtgvCheckOutUC_Lista = new DataGridView();
             panel1 = new Panel();
             lblCheckOutUC_Titulo = new Label();
+            btnCheckOutUC_Refresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckOutUC_Selected).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckOutUC_Lista).BeginInit();
             SuspendLayout();
@@ -145,10 +146,21 @@
             lblCheckOutUC_Titulo.TabIndex = 5;
             lblCheckOutUC_Titulo.Text = "Check-Out";
             // 
+            // btnCheckOutUC_Refresh
+            // 
+            btnCheckOutUC_Refresh.BackColor = SystemColors.ActiveCaption;
+            btnCheckOutUC_Refresh.Location = new Point(1162, 88);
+            btnCheckOutUC_Refresh.Name = "btnCheckOutUC_Refresh";
+            btnCheckOutUC_Refresh.Size = new Size(207, 29);
+            btnCheckOutUC_Refresh.TabIndex = 10;
+            btnCheckOutUC_Refresh.Text = "Refresh";
+            btnCheckOutUC_Refresh.UseVisualStyleBackColor = false;
+            // 
             // CheckOutUC
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnCheckOutUC_Refresh);
             Controls.Add(btnCheckOutUC_ConfirmarCheckOut);
             Controls.Add(dtgvCheckOutUC_Selected);
             Controls.Add(dtgvCheckOutUC_Lista);
@@ -175,5 +187,6 @@
         public DataGridView dtgvCheckOutUC_Lista;
         private Panel panel1;
         protected Label lblCheckOutUC_Titulo;
+        public Button btnCheckOutUC_Refresh;
     }
 }

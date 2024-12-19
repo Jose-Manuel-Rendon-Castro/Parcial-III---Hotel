@@ -32,13 +32,14 @@
             panel1 = new Panel();
             dtgvCheckInUC_Lista = new DataGridView();
             dtgvCheckInUC_Selected = new DataGridView();
-            btnCheckInUC_ConfirmarCheckIn = new Button();
             ID_Checks = new DataGridViewTextBoxColumn();
             Fecha_Entrada = new DataGridViewTextBoxColumn();
             Fecha_Salida = new DataGridViewTextBoxColumn();
             Id_Huesped = new DataGridViewTextBoxColumn();
             Num_Habitacion = new DataGridViewTextBoxColumn();
             Estado_Checks = new DataGridViewTextBoxColumn();
+            btnCheckInUC_ConfirmarCheckIn = new Button();
+            btnCheckInUC_Refresh = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckInUC_Lista).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtgvCheckInUC_Selected).BeginInit();
             SuspendLayout();
@@ -90,19 +91,6 @@
             dtgvCheckInUC_Selected.Size = new Size(1328, 58);
             dtgvCheckInUC_Selected.TabIndex = 3;
             // 
-            // btnCheckInUC_ConfirmarCheckIn
-            // 
-            btnCheckInUC_ConfirmarCheckIn.BackColor = SystemColors.ActiveCaption;
-            btnCheckInUC_ConfirmarCheckIn.BackgroundImageLayout = ImageLayout.None;
-            btnCheckInUC_ConfirmarCheckIn.FlatAppearance.BorderSize = 3;
-            btnCheckInUC_ConfirmarCheckIn.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCheckInUC_ConfirmarCheckIn.Location = new Point(41, 689);
-            btnCheckInUC_ConfirmarCheckIn.Name = "btnCheckInUC_ConfirmarCheckIn";
-            btnCheckInUC_ConfirmarCheckIn.Size = new Size(437, 81);
-            btnCheckInUC_ConfirmarCheckIn.TabIndex = 4;
-            btnCheckInUC_ConfirmarCheckIn.Text = "Confirmar Check-In";
-            btnCheckInUC_ConfirmarCheckIn.UseVisualStyleBackColor = false;
-            // 
             // ID_Checks
             // 
             ID_Checks.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -145,10 +133,34 @@
             Estado_Checks.MinimumWidth = 6;
             Estado_Checks.Name = "Estado_Checks";
             // 
+            // btnCheckInUC_ConfirmarCheckIn
+            // 
+            btnCheckInUC_ConfirmarCheckIn.BackColor = SystemColors.ActiveCaption;
+            btnCheckInUC_ConfirmarCheckIn.BackgroundImageLayout = ImageLayout.None;
+            btnCheckInUC_ConfirmarCheckIn.FlatAppearance.BorderSize = 3;
+            btnCheckInUC_ConfirmarCheckIn.Font = new Font("Microsoft YaHei UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCheckInUC_ConfirmarCheckIn.Location = new Point(41, 689);
+            btnCheckInUC_ConfirmarCheckIn.Name = "btnCheckInUC_ConfirmarCheckIn";
+            btnCheckInUC_ConfirmarCheckIn.Size = new Size(437, 81);
+            btnCheckInUC_ConfirmarCheckIn.TabIndex = 4;
+            btnCheckInUC_ConfirmarCheckIn.Text = "Confirmar Check-In";
+            btnCheckInUC_ConfirmarCheckIn.UseVisualStyleBackColor = false;
+            // 
+            // btnCheckInUC_Refresh
+            // 
+            btnCheckInUC_Refresh.BackColor = SystemColors.ActiveCaption;
+            btnCheckInUC_Refresh.Location = new Point(1162, 88);
+            btnCheckInUC_Refresh.Name = "btnCheckInUC_Refresh";
+            btnCheckInUC_Refresh.Size = new Size(207, 29);
+            btnCheckInUC_Refresh.TabIndex = 5;
+            btnCheckInUC_Refresh.Text = "Refresh";
+            btnCheckInUC_Refresh.UseVisualStyleBackColor = false;
+            // 
             // CheckInUC
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnCheckInUC_Refresh);
             Controls.Add(btnCheckInUC_ConfirmarCheckIn);
             Controls.Add(dtgvCheckInUC_Selected);
             Controls.Add(dtgvCheckInUC_Lista);
@@ -175,5 +187,6 @@
         private DataGridViewTextBoxColumn Id_Huesped;
         private DataGridViewTextBoxColumn Num_Habitacion;
         private DataGridViewTextBoxColumn Estado_Checks;
+        public Button btnCheckInUC_Refresh;
     }
 }
